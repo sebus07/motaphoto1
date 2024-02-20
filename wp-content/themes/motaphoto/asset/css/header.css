@@ -1,0 +1,81 @@
+.container{
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.site-branding{
+    width: 30vw; 
+}
+.site-branding img{
+    width: 60%; /* Réglez la largeur de l'image à 50% de la largeur de son conteneur */
+    height: auto; /* Garantit que la hauteur s'ajuste automatiquement pour conserver les proportions de l'image */
+}
+
+
+#site-navigation ul {
+    display: flex;
+    list-style: none; /* Supprimez les puces de liste */
+    padding: 0; /* Supprimez les marges intérieures */
+    width: 50vw;
+    justify-content: flex-end;
+    font-family: "Space Mono", monospace; /* Utilise la police Space Mono */
+    font-weight: 400; /* Poids de la police normal */
+    font-size: 16px; /* Taille de la police 16 pixels */
+    line-height: 23.7px; /* Hauteur de ligne 23.7 pixels */
+    text-decoration: none;
+}
+
+#site-navigation li {
+    margin-right: 20px; /* Ajoutez de l'espace entre chaque élément de menu */
+    text-decoration: none;
+}
+
+#colophon{
+    display: flex;
+}
+.site-header {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-decoration: none;
+}
+#menu-item-29{
+    text-decoration: none;
+}
+
+
+
+@media (min-width: 1440px) {
+    .headerImg img {
+        width: 1440px; /* La largeur de l'image est fixée à 1440px sur les écrans d'au moins 1440px de large */
+    }
+    .container{
+        width: 1440px;
+        max-height: 80px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .site-branding img{
+        width: 90%; /* Réglez la largeur de l'image à 50% de la largeur de son conteneur */
+        height: auto; /* Garantit que la hauteur s'ajuste automatiquement pour conserver les proportions de l'image */
+    }
+}
+
+@media (max-width: 768px){
+
+    .container{
+        width: 100%;
+        max-height: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 10px;
+        margin-right: 0 !important;
+    }
+    .site-branding img{
+        width: 90%; /* Réglez la largeur de l'image à 50% de la largeur de son conteneur */
+        height: auto; /* Garantit que la hauteur s'ajuste automatiquement pour conserver les proportions de l'image */
+    }
+
+}
