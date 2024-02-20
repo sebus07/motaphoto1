@@ -5,8 +5,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+ * @subpackage motaphoto
+ * @since motaphoto 1.0
  */
 
 get_header();
@@ -14,7 +14,12 @@ get_header();
 /* Start the Loop */
 while ( have_posts() ) :
 	the_post();
-	get_template_part( 'wp-content\themes\motaphoto-child\page.php' );
+	get_template_part( 'template-parts/content/content-single' ); // Assurez-vous que le chemin est correct pour le modèle de contenu unique.
+
+	// If comments are open or there is at least one comment, load up the comment template.
+	if ( comments_open() || get_comments_number() ) {
+		comments_template();
+	}
 endwhile; // End of the loop.
 
 get_footer();
