@@ -49,4 +49,5 @@
      width: 100%; /* Largeur égale à 100% de la largeur de la fenêtre d'affichage */
      bottom: 0;
      border-top: 1px solid black;
+     font-family: 'Space Mono', monospace;
  }

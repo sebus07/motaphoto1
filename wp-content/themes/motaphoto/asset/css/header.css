@@ -1,3 +1,7 @@
+.header{
+    font-family: 'Space Mono', monospace;
+}
+
 .container{
     display: flex;
     align-items: center;
