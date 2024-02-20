@@ -10,7 +10,17 @@
  */
 
 get_header();
+?>
 
+<!doctype html>
+<html>
+
+<body>
+<h1>hello wolrd</h1>
+
+</body>
+
+<?php
 /* Start the Loop */
 while ( have_posts() ) :
 	the_post();

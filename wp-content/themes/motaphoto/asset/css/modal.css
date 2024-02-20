@@ -1,0 +1,39 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 597px;
+    height: 769;
+    border: 5px solid black;
+
+}
+
+#wpforms-29-field_1,
+#wpforms-29-field_2,
+#wpforms-29-field_3
+{
+    width: 263px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+#wpforms-29-field_4{
+    width: 263px;
+    height:210px;
+    border-radius: 8px;
+}
+
+.wpforms-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#wpforms-submit-29{
+    width: 263px;
+    height: 40px;  
+}
