@@ -1,0 +1,13 @@
+.hero {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    width: 100%; /* Prend la largeur totale de son conteneur */
+    max-width: 1440px; /* Maximum de 1440px de largeur */
+    margin: 0 auto; /* Centrer horizontalement */
+}
+
+.hero img {
+    max-width: 100%; /* Pour que l'image ne dépasse pas la largeur du conteneur */
+    height: auto; /* Pour conserver le ratio hauteur/largeur de l'image */
+}

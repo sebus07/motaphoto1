@@ -16,8 +16,11 @@ get_header();
 <html>
 
 <body>
-<h1>hello wolrd</h1>
-
+	<div class="hero">
+		<a href="lien-de-votre-page.html">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/header.webp" alt="Description de l'image">
+		</a>
+	</div>
 </body>
 
 <?php

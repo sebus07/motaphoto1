@@ -27,12 +27,14 @@
     font-weight: 400; /* Poids de la police normal */
     font-size: 16px; /* Taille de la police 16 pixels */
     line-height: 23.7px; /* Hauteur de ligne 23.7 pixels */
-    text-decoration: none;
 }
 
 #site-navigation li {
     margin-right: 20px; /* Ajoutez de l'espace entre chaque élément de menu */
-    text-decoration: none;
+}
+
+#site-navigation a {
+    text-decoration: none; /* Enlever le soulignement des liens */
 }
 
 #colophon{
@@ -62,8 +64,12 @@
         padding-right: 100px;
     }
     .site-branding img{
-        width: 90%; /* Réglez la largeur de l'image à 50% de la largeur de son conteneur */
-        height: auto; /* Garantit que la hauteur s'ajuste automatiquement pour conserver les proportions de l'image */
+        width: 216px; /* Réglez la largeur de l'image à 50% de la largeur de son conteneur */
+        height: 14px; /* Garantit que la hauteur s'ajuste automatiquement pour conserver les proportions de l'image */
+        margin-left: 146px;
+    }
+    #site-navigation{
+        margin-right: 146px;
     }
 }
 
