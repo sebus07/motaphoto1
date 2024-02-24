@@ -82,6 +82,7 @@
         padding-right: 0;
         margin-left: 10px;
         margin-right: 0 !important;
+        justify-content: space-between;
     }
     .site-branding img{
         width: 90%; /* Réglez la largeur de l'image à 50% de la largeur de son conteneur */

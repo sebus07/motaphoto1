@@ -21,6 +21,38 @@ get_header();
 			<img src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/header.webp" alt="Description de l'image">
 		</a>
 	</div>
+	<section class="">
+		<div class="filtres">
+			<div class="dropdown">
+				<button class="dropbtn">CATEGORIES</button>
+				<div class="dropdown-content">
+					<a href="#">Réception</a>
+					<a href="#">Télévision</a>
+					<a href="#">Concert</a>
+					<a href="#">Mariage</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">FORMATS</button>
+				<div class="dropdown-content">
+					<a href="#">Paysage</a>
+					<a href="#">Portrait</a>
+				</div>
+			</div>
+		</div>
+		<div class="filtres2">
+			<div class="dropdown">
+				<button class="dropbtn2">TRIER PAR</button>
+				<div class="dropdown-content">
+					<a href="#">Argentique</a>
+					<a href="#">Numérique</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="grid">
+
+	</div>
 </body>
 
 <?php

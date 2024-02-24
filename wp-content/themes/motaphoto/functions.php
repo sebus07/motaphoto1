@@ -8,6 +8,7 @@ function theme_enqueue_assets() {
     wp_enqueue_style('footer-style', get_template_directory_uri() . '/asset/css/footer.css');
 	wp_enqueue_style('modal-style', get_template_directory_uri() . '/asset/css/modal.css');
     wp_enqueue_style('index-style', get_template_directory_uri() . '/asset/css/index.css');
+    wp_enqueue_style('grid-style', get_template_directory_uri() . '/asset/css/grid.css');
 
     // Enqueue scripts
     wp_enqueue_script('jquery');
