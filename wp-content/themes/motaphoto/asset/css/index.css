@@ -1,3 +1,16 @@
+#masthead {
+
+    background: linear-gradient(to bottom, #FFFFFF, #f2f2f2); /* Dégradé de blanc à gris clair */
+    box-shadow: 0px 4px 14px 10px rgba(0,0,0,0.03); /* Ombre avec les paramètres spécifiés */
+}
+
+
+#motaphoto1_settings_field_Photo_preview {
+    margin-top: 10px;
+    display: block;
+}
+
+
 .hero {
     display: flex;
     justify-content: center; /* Centrer horizontalement */
@@ -27,6 +40,7 @@
     background-color: #f1f1f1;
     min-width: 160px;
     z-index: 1;
+    border-radius: 0px 0px 8px 8px;
 }    
         
 .dropdown-content a {
@@ -52,14 +66,14 @@
 .dropbtn{
     width: 260px;
     height: 43px;
-    border-radius:8px 8px 0px 0px ;
+    border-radius:8px ;
     margin-right: 25px;
     text-align: left;
 }
 .dropbtn2{
     width: 260px;
     height: 43px;
-    border-radius:8px 8px 0px 0px ;
+    border-radius:8px;
     text-align: left;
 }
 .filtres{
@@ -75,7 +89,185 @@
 
 section {
     display: flex;
-    width: 1148px;
+    width: 1190px;
     justify-content: center;
     margin: 0 auto; 
+}
+
+.chargerplus{
+    display: flex;
+    align-content: flex-end;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+}
+
+.dropbtn3{
+    width: 260px;
+    height: 43px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1196px){
+   
+.filtres2 {
+    display: flex;
+    width: 33vw ;
+    justify-content: flex-start;
+}
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1150px){
+   
+    .filtres2 {
+        display: flex;
+        width: 33vw ;
+        justify-content: flex-start;
+        width: 50vw;
+    }
+    .filtres{
+        display: flex;
+        width: 50vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    }
+
+    @media screen and (min-width: 500px) and (max-width: 1050px){
+
+        .filtres2 {
+            display: flex;
+            width: 33vw ;
+            justify-content: flex-start;
+            width: 50vw;
+        }
+        .filtres{
+            display: flex;
+            width: 50vw;
+            flex-direction: column;
+            align-items: center;
+        }
+        .section{
+            display: flex;
+            width: 1190px;
+            margin: 0 auto;
+        }
+
+    }
+
+
+
+
+
+    /*partie photo nouvelle page//////////////////////////////////////////////////
+   /* CSS pour la div contenant les détails de la photo et l'image */
+.photo-details-container {
+    max-width: 1200px; /* Largeur maximum */
+    margin: 0 auto; /* Centrer la div horizontalement */
+    display: flex; /* Utiliser flexbox pour la mise en page */
+    align-items: flex-end;
+    padding-top: 50px;
+}
+
+/* CSS pour les détails de la photo à gauche */
+.photo-details {
+    flex: 1; /* Le contenu prendra tout l'espace restant */
+    padding: 20px; /* Espacement intérieur */
+    box-sizing: border-box; /* Pour inclure le padding dans la largeur */
+    border-bottom: 1px solid black; 
+    Width: 564px;
+}
+
+/* CSS pour l'image à droite */
+.photo-image {
+    flex: 1; /* Le contenu prendra tout l'espace restant */
+}
+
+.photo-image img {
+    max-width: 100%; /* Image occupera 100% de la largeur disponible */
+    height: auto; /* Hauteur ajustée automatiquement */
+    display: block; /* Pour supprimer les marges par défaut */
+}
+.photo-details h2{
+    font-weight: 400;
+    font-style: italic;
+    font-size: 66px;
+    line-height: 58px; 
+    
+}
+    .photo-details p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20.73px;
+    letter-spacing: 10%;
+}
+.flex-centre{
+    display: flex;
+    justify-content: center;
+}
+.dropbtn4{
+    width: 260px;
+    height: 43px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.contact_photo{
+    display: flex;
+    justify-content: space-evenly;
+    width: 1200px;
+    align-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.texte p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20.73px;
+}
+
+.mignature{
+display: flex;
+}
+/* Style pour la section "Vous aimerez AUSSI" et les photos similaires */
+
+.photos-similaires {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+
+.flex-centre2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-centre2 p{
+text-align: left ;
+font-family: 'Space Mono', monospace;
+font-weight: 400;
+font-size: 18px;
+line-height: 26.66px;
+letter-spacing: 10%;
+margin-top: 50px;
+}
+
+.grid {
+    min-height: 540px !important;
+    margin-bottom: 80px;
+}
+
+
+.mignature img{
+height:71px;
+width: 81px;
+
 }

@@ -1,3 +1,4 @@
+
 <?php
 /**
  * The template for displaying all single posts
@@ -23,18 +24,9 @@ while ( have_posts() ) :
 	}
 
 	// Previous/next post navigation.
-	$motaphoto_next = is_rtl() ? motaphoto_get_icon_svg( 'ui', 'arrow_left' ) : motaphoto_get_icon_svg( 'ui', 'arrow_right' );
-	$motaphoto_prev = is_rtl() ? motaphoto_get_icon_svg( 'ui', 'arrow_right' ) : motaphoto_get_icon_svg( 'ui', 'arrow_left' );
+	the_post_navigation();
 
-	$motaphoto_next_label     = esc_html__( 'Next post', 'motaphoto' );
-	$motaphoto_previous_label = esc_html__( 'Previous post', 'motaphoto' );
-
-	the_post_navigation(
-		array(
-			'next_text' => '<p class="meta-nav">' . $motaphoto_next_label . $motaphoto_next . '</p><p class="post-title">%title</p>',
-			'prev_text' => '<p class="meta-nav">' . $motaphoto_prev . $motaphoto_previous_label . '</p><p class="post-title">%title</p>',
-		)
-	);
 endwhile; // End of the loop.
 
 get_footer();
+?>
