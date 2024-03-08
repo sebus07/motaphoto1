@@ -1,7 +1,38 @@
+
+/* Déclaration de la police Space Mono */
+@font-face {
+    font-family: 'Space Mono';
+    src: url('<?php echo get_template_directory_uri(); ?>/asset/fonts/SpaceMono/SpaceMono-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Déclaration de la police Poppins */
+@font-face {
+    font-family: 'Poppins';
+    src: url('<?php echo get_template_directory_uri(); ?>/asset/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Utilisation de la police Space Mono */
+.motaphoto-font {
+    font-family: 'Space Mono', monospace;
+}
+
+/* Utilisation de la police Poppins */
+.poppins-font {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
 #masthead {
 
     background: linear-gradient(to bottom, #FFFFFF, #f2f2f2); /* Dégradé de blanc à gris clair */
     box-shadow: 0px 4px 14px 10px rgba(0,0,0,0.03); /* Ombre avec les paramètres spécifiés */
+    Height: 80px;
 }
 
 
@@ -32,6 +63,8 @@
     position: relative;
     display: inline-block;
     margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+
 }
         
 .dropdown-content {
@@ -108,7 +141,7 @@ section {
     height: 43px;
     margin-bottom: 30px;
     margin-top: 30px;
-}
+    }
 
 @media screen and (min-width: 1050px) and (max-width: 1196px){
    
@@ -158,7 +191,56 @@ section {
 
     }
 
+    @media only screen and (max-width: 768px) {
+        .photo-details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-end;
+            padding-top: 50px;
+            flex-direction: column-reverse;
+        }
+        .mignature img{
+            display: none;
+        }
+        .contact_photo {
+            display: flex;
+            justify-content: space-evenly;
+            width: 1200px;
+            align-content: space-between;
+            flex-direction: column !important;
+            flex-wrap: nowrap;
+            align-items: center;
+            border-bottom: 1px solid black;
+        }
+        section {
+            display: flex;
+            width: 1190px;
+            margin: 0 auto; 
+            margin: 0 auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .filtres {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        }
+        .filtres2 {
+            display: flex;
+            width: 100vw !important;
+            justify-content: center;
+            align-items: center;
+        }
+        .filtres2 .dropdown{
+            margin-right: 25px;
+        }
 
+
+        
+      }
 
 
 
@@ -167,23 +249,22 @@ section {
 .photo-details-container {
     max-width: 1200px; /* Largeur maximum */
     margin: 0 auto; /* Centrer la div horizontalement */
-    display: flex; /* Utiliser flexbox pour la mise en page */
+    display: flex; 
     align-items: flex-end;
     padding-top: 50px;
 }
 
 /* CSS pour les détails de la photo à gauche */
 .photo-details {
-    flex: 1; /* Le contenu prendra tout l'espace restant */
-    padding: 20px; /* Espacement intérieur */
-    box-sizing: border-box; /* Pour inclure le padding dans la largeur */
+    flex: 1; 
+    box-sizing: border-box; 
     border-bottom: 1px solid black; 
     Width: 564px;
 }
 
 /* CSS pour l'image à droite */
 .photo-image {
-    flex: 1; /* Le contenu prendra tout l'espace restant */
+    flex: 1; 
 }
 
 .photo-image img {
@@ -196,13 +277,16 @@ section {
     font-style: italic;
     font-size: 66px;
     line-height: 58px; 
-    
+    margin-bottom: 0;
+    width: 200px;
+    text-transform: uppercase;
 }
     .photo-details p{
     font-weight: 400;
     font-size: 14px;
     line-height: 20.73px;
     letter-spacing: 10%;
+    text-transform: uppercase;
 }
 .flex-centre{
     display: flex;
@@ -229,11 +313,47 @@ section {
     font-weight: 400;
     font-size: 14px;
     line-height: 20.73px;
+    margin-right: 80px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .mignature{
 display: flex;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+width: 40vw;
 }
+
+.mignature img{
+    margin-top: 10px;
+    height:81px;
+    width: 89px;
+    background-size: cover; /* Affichage en cover */
+    
+}
+
+.fleche{
+    display: flex;
+}
+/* Réduire la taille des images à l'intérieur de .fleche */
+.flex-centre .contact_photo .mignature .fleche img {
+    width: 70% !important; /* Réduire la largeur à 20% */
+    height: auto; /* Pour conserver le ratio de l'image */
+}
+
+/* Optionnel : centrer les images horizontalement dans .fleche */
+.flex-centre .contact_photo .mignature .fleche {
+    display: flex;
+    justify-content: center;
+}
+/* Ajouter une marge à droite uniquement à la première image */
+.flex-centre .contact_photo .mignature .fleche img:first-child {
+    margin-right: 10px; /* Vous pouvez ajuster la valeur de la marge selon vos besoins */
+
+}
+
+
 /* Style pour la section "Vous aimerez AUSSI" et les photos similaires */
 
 .photos-similaires {
@@ -265,9 +385,33 @@ margin-top: 50px;
     margin-bottom: 80px;
 }
 
-
-.mignature img{
-height:71px;
-width: 81px;
-
+@font-face {
+    font-family: 'Space Mono';
+    src: url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/SpaceMono/SpaceMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
+
+@font-face {
+    font-family: 'Space Mono';
+    src: url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/SpaceMono/SpaceMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    src: url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/SpaceMono/SpaceMono-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+.photo-details-container {
+    font-family: 'Space Mono', monospace;
+}
+
+
+
+
+/* menu burger////////////////////////////////////////////////////////////////
+

@@ -22,31 +22,31 @@ get_header();
     <section class="">
         <div class="filtres">
             <div class="dropdown">
-                <button class="dropbtn">CATEGORIES</button>
-                <div class="dropdown-content">
+                <button class="dropbtn poppins-font">CATEGORIES</button>
+                <div class="dropdown-content poppins-font">
                     <a href="#" class="filter-reception">Réception</a>
                     <a href="#" class="filter-television">Télévision</a>
                     <a href="#" class="filter-concert">Concert</a>
                     <a href="#" class="filter-mariage">Mariage</a>
                 </div>
             </div>
-            <div class="dropdown">
-                <button class="dropbtn">FORMATS</button>
+            <div class="dropdown poppins-font">
+                <button class="dropbtn poppins-font">FORMATS</button>
                 <div class="dropdown-content">
-                    <a href="#">Paysage</a>
-                    <a href="#">Portrait</a>
+                    <a href="#" class="filter-paysage">Paysage</a>
+                    <a href="#" class="filter-portrait">Portrait</a>
                 </div>
             </div>
         </div>
         <div class="filtres2">
-            <div class="dropdown">
-                <button class="dropbtn2">TRIER PAR</button>
-                <div class="dropdown-content">
-                    <a href="#">Argentique</a>
-                    <a href="#">Numérique</a>
-                </div>
-            </div>
+    <div class="dropdown">
+        <button class="dropbtn2 poppins-font">TRIER PAR</button>
+        <div class="dropdown-content">
+            <a href="#" class="filter-type" data-type="argentique">Argentique</a>
+            <a href="#" class="filter-type" data-type="numerique">Numérique</a>
         </div>
+    </div>
+</div>
     </section>
     <div class="photo">
         <div class="grid">
@@ -92,8 +92,8 @@ get_header();
         </div>
     </div>
 
-    <div class="chargerplus">
-        <button class="dropbtn3">Charger plus</button>
+    <div class="chargerplus motaphoto-font">
+        <button class="dropbtn3 motaphoto-font">Charger plus</button>
     </div>
 	
 </body>

@@ -27,11 +27,11 @@ if (have_posts()) :
         echo '<div class="photo-details-container">';
         echo '<div class="photo-details">';
         echo '<h2>' . get_the_title() . '</h2>';
-        echo '<p>Année : ' . $annee . '</p>';
+        echo '<p>Référence : ' . $Référence . '</p>';
         echo '<p>Catégorie : ' . $categorie . '</p>';
         echo '<p>Format : ' . $format . '</p>';
-        echo '<p>Référence : ' . $Référence . '</p>';
         echo '<p>Type : ' . $type . '</p>';
+        echo '<p>Année : ' . $annee . '</p>';
         echo '</div>';
 
         // Afficher l'image à droite
@@ -57,6 +57,7 @@ endif;
             <button class="dropbtn4">Contact</button>
         </div>
         <div class="mignature">
+
         <?php
     // Définir les arguments pour la nouvelle requête des images similaires
 $args_similaires = array(
@@ -86,6 +87,10 @@ if ($query_similaires->have_posts()) :
     wp_reset_postdata();
 endif;
 ?>
+            <div class="fleche">
+                <div><img id="previousPhoto" src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/Line6.png" alt=""></div>
+                <div><img id="nextPhoto" src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/Line7.png" alt=""></div> 
+            </div>
         </div>
     </div>
     
@@ -112,7 +117,8 @@ $query_similaires = new WP_Query($args_similaires);
 
 if ($query_similaires->have_posts()) :
     echo '<div class="flex-centre2">';
-    echo '<p>Vous aimerez AUSSI</p>';
+    echo '<div class="centre7">';
+    echo '<p>VOUS AIMEREZ AUSSI</p>';
     echo '<div class="grid">';
     while ($query_similaires->have_posts()) : $query_similaires->the_post();
         $image_similaire = get_field('image');
@@ -125,11 +131,13 @@ if ($query_similaires->have_posts()) :
             echo '</div>';
         }
     endwhile;
-    echo '</div>'; // Fin de grid
-    echo '</div>'; // Fin de la div pour "Vous aimerez AUSSI"
+    echo '</div>'; // grid
+    echo '</div>'; // "Vous aimerez AUSSI"
     wp_reset_postdata();
 endif;
+
 ?>
+
 <?php
 get_footer();
 ?>
