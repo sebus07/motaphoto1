@@ -23,10 +23,7 @@
     padding: 0; /* Supprimez les marges intérieures */
     width: 50vw;
     justify-content: flex-end;
-    font-family: "Space Mono", monospace; /* Utilise la police Space Mono */
-    font-weight: 400; /* Poids de la police normal */
-    font-size: 16px; /* Taille de la police 16 pixels */
-    line-height: 23.7px; /* Hauteur de ligne 23.7 pixels */
+    text-transform: uppercase;
 }
 
 #site-navigation li {
@@ -49,6 +46,13 @@
 }
 #menu-item-29{
     text-decoration: none;
+
+}
+.menu a{
+    color: black;
+    font-weight: 400; /* Poids de la police normal */
+    font-size: 16px; /* Taille de la police 16 pixels */
+    line-height: 23.7px; /* Hauteur de ligne 23.7 pixels */
 }
 
 

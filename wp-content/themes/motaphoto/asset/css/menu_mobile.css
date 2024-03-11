@@ -1,14 +1,17 @@
+/* Styles pour le menu burger */
 .menu-toggle {
     display: none; /* Masque le bouton burger par défaut */
+    cursor: pointer; /* Ajoute un curseur pointer pour indiquer qu'il est cliquable */
 }
 
+
+/* Styles pour le menu mobile */
 .mobile-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #fff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
@@ -17,15 +20,28 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    
 }
 
 .mobile-menu ul li {
     padding: 10px;
 }
 
-.menu-open .mobile-menu {
+.mobile-menu ul li a {
+    color: #111010; /* Couleur du texte */
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* Afficher le menu mobile lorsque le bouton burger est cliqué */
+.menu-toggle.menu-open + .mobile-menu {
     display: block;
 }
+
+.mobile-menu li:hover{
+    background-color: #E00000;
+    }
 
 /* Masquer le menu principal sur mobile */
 @media screen and (max-width: 768px) {
@@ -35,6 +51,11 @@
     .menu-toggle {
         display: block;
         margin-right: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer; /* Indicate clickable element */
     }
     .site-branding a {
         margin-left: 50px;
@@ -48,5 +69,16 @@
         display: block;
         margin-left: 15px;
     }
-
+    .mobile-menu.active {
+        display: block; /* Show on click */
+      }
+      .mobile-menu {
+        display: none; /* Hide initially */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 10;
+      }
 }

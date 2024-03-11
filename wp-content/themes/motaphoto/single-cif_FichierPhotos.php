@@ -25,7 +25,7 @@ if (have_posts()) :
 
         // Afficher les détails de la photo à gauche et la photo à droite
         echo '<div class="photo-details-container">';
-        echo '<div class="photo-details">';
+        echo '<div class="photo-details motaphoto-font">';
         echo '<h2>' . get_the_title() . '</h2>';
         echo '<p>Référence : ' . $Référence . '</p>';
         echo '<p>Catégorie : ' . $categorie . '</p>';

@@ -436,4 +436,3 @@ function load_photos_by_type() {
 
 
 
-

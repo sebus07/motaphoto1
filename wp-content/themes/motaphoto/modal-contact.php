@@ -1,4 +1,3 @@
-
 <!-- Modal Contact -->
 <div id="modal-contact" class="modal">
     <div class="modal-content">

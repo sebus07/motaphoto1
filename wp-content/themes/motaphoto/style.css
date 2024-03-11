@@ -10,29 +10,3 @@ Text Domain: motaphoto
 */
 
 
-@font-face {
-    font-family: 'Poppins';
-    src: url('../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Space Mono';
-    src: url('/assets/fonts/SpaceMono/SpaceMono-Regular.ttf') format('truetype'); 
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Space Mono';
-    src: url('/assets/fonts/SpaceMono/SpaceMono-Bold.ttf') format('truetype'); 
-    font-weight: bold;
-    font-style: normal;
-}

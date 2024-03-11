@@ -17,15 +17,16 @@
      padding: 0;
      width: 50vw;
      justify-content: space-between;
-     font-family: "Space Mono", monospace; /* Utilise la police Space Mono */
-     font-weight: 400; /* Poids de la police normal */
-     font-size: 16px; /* Taille de la police 16 pixels */
-     line-height: 23.7px; /* Hauteur de ligne 23.7 pixels */
-     
+
  }
  
  #footer-navigation li a {
  text-decoration: none; 
+ text-transform: uppercase;
+ font-family: "Space Mono", monospace; /* Utilise la police Space Mono */
+ font-weight: 400; /* Poids de la police normal */
+ font-size: 16px; /* Taille de la police 16 pixels */
+ line-height: 23.7px; /* Hauteur de ligne 23.7 pixels */
  }
  
  @media screen and (max-width: 768px) {

@@ -6,7 +6,7 @@ $image = get_field('image');
 $Référence = get_field('Référence');
 $type = get_field('type');
 
-wp_enqueue_script('jquery');
+
 get_header();
 ?>
 
@@ -15,14 +15,14 @@ get_header();
 
 <body>
     <div class="hero">
-        <a href="lien-de-votre-page.html">
+        <a href="/motaphoto1">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/header.webp" alt="Description de l'image">
         </a>
     </div>
     <section class="">
         <div class="filtres">
             <div class="dropdown">
-                <button class="dropbtn poppins-font">CATEGORIES</button>
+                <button class="dropbtn poppins-font">CATÉGORIES</button>
                 <div class="dropdown-content poppins-font">
                     <a href="#" class="filter-reception">Réception</a>
                     <a href="#" class="filter-television">Télévision</a>

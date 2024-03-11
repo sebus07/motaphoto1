@@ -300,13 +300,13 @@ jQuery(function($){
                 },
                 beforeSend:function(){
                     $('.grid').html(''); // Efface les photos actuelles avant de charger les nouvelles
-                    $('.dropbtn2').text('Chargement...');
+                    $('.dropbtn2').text('TRIER PAR');
                 },
                 success:function(response){
                     if(response){
                         $('.grid').append(response);
                         page++;
-                        $('.dropbtn2').text('Charger plus');
+                        $('.dropbtn2').text('TRIER PAR');
                     } else {
                         $('.dropbtn2').text('Aucune photo trouvée');
                         canBeLoaded = false;
@@ -322,4 +322,28 @@ jQuery(function($){
 ////////menu burger//////////////////////////////////////////
 
 // JavaScript pour le menu burger
+
+document.addEventListener("DOMContentLoaded", function() {
+    var menuToggle = document.querySelector(".menu-toggle");
+    var mobileMenu = document.querySelector(".mobile-menu");
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", function() {
+            this.classList.toggle("menu-open");
+            mobileMenu.classList.toggle("menu-open");
+        });
+
+        // Fermer le menu lorsque vous cliquez sur un lien du menu
+        var mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
+
+        mobileMenuLinks.forEach(function(link) {
+            link.addEventListener("click", function() {
+                menuToggle.classList.remove("menu-open");
+                mobileMenu.classList.remove("menu-open");
+            });
+        });
+    }
+});
+
+
 
