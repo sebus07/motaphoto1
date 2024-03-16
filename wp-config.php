@@ -1,4 +1,5 @@
 <?php
+define('WP_CACHE', true); // WP-Optimize Cache
 /**
  * La configuration de base de votre installation WordPress.
  *
@@ -18,28 +19,21 @@
  *
  * @package WordPress
  */
-
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
 define( 'DB_NAME', 'motaphoto1' );
-
 /** Utilisateur de la base de données MySQL. */
 define( 'DB_USER', 'root' );
-
 /** Mot de passe de la base de données MySQL. */
 define( 'DB_PASSWORD', 'root' );
-
 /** Adresse de l’hébergement MySQL. */
 define( 'DB_HOST', 'localhost:3307' );
-
 /** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
-
 /** Type de collation de la base de données.
   * N’y touchez que si vous savez ce que vous faites.
   */
 define('DB_COLLATE', '');
-
 /**#@+
  * Clés uniques d’authentification et salage.
  *
@@ -60,7 +54,6 @@ define( 'SECURE_AUTH_SALT', 'NQe(%q|?C]jkXR*4Le?2<PAc[!4$d*1S(}u5>lgNb$dDMuhXos0
 define( 'LOGGED_IN_SALT',   'eT3@LX`)Z vdO4~#T#JH_ekHCw}C/t[4QVm:?:J^pr<vH_5:MEutyh4B!z7.@7E8' );
 define( 'NONCE_SALT',       'o;n:Y2B`iV=a%b/9d[e=xu]2x{Bw5wUu}]P3{|$7*Lzki56vm2R(YI)Z.w2*NX85' );
 /**#@-*/
-
 /**
  * Préfixe de base de données pour les tables de WordPress.
  *
@@ -69,7 +62,6 @@ define( 'NONCE_SALT',       'o;n:Y2B`iV=a%b/9d[e=xu]2x{Bw5wUu}]P3{|$7*Lzki56vm2R
  * N’utilisez que des chiffres, des lettres non-accentuées, et des caractères soulignés !
  */
 $table_prefix = 'wp_';
-
 /**
  * Pour les développeurs et développeuses : le mode déboguage de WordPress.
  *
@@ -85,12 +77,9 @@ $table_prefix = 'wp_';
  * @link https://fr.wordpress.org/support/article/debugging-in-wordpress/
  */
 define('WP_DEBUG', false);
-
 /* C’est tout, ne touchez pas à ce qui suit ! Bonne publication. */
-
 /** Chemin absolu vers le dossier de WordPress. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
-
 /** Réglage des variables de WordPress et de ses fichiers inclus. */
 require_once(ABSPATH . 'wp-settings.php');

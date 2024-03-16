@@ -8,7 +8,7 @@
     margin-top: 40px;
     max-width: 1440px;
     width: 100%;
-    min-height: 2040px;
+    min-height: 250px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -31,4 +31,30 @@
 
 .grid-item:hover::before {
     opacity: 1;
+}
+
+
+/* Media query pour les appareils de largeur maximale de 768px */
+@media (max-width: 768px) {
+    .grid-item img {
+        width: 317.66px !important;
+        height: 278.8px !important;
+    }
+    .grid-item {
+        flex: unset;
+        max-width: unset;
+    }
+    .grid {
+        margin-top: 40px;
+        max-width: 1440px;
+        width: 100%;
+        min-height: 204px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }

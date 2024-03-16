@@ -19,7 +19,7 @@ wp_enqueue_script('jquery');
     transition: transform 0.3s ease-in-out;
     }
 
-    .menu-open .burger-icon {
+    .menu-open .burger-icon{
     transform: rotate(-45deg);  /* Rotation existante */
     background: url('<?php echo get_stylesheet_directory_uri(); ?>/asset/img/Menux.png') no-repeat center;  /* Image existante */
     background-size: contain;  /* Taille existante */
