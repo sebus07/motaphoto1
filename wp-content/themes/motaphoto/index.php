@@ -3,7 +3,7 @@ $annee = get_field('annee');
 $categorie = get_field('categorie');
 $format = get_field('format');
 $image = get_field('image');
-$Référence = get_field('Référence');
+$Référence = get_field('reference');
 $type = get_field('type');
 
 get_header();
@@ -41,8 +41,8 @@ get_header();
             <div class="dropdown">
                 <button class="dropbtn2 poppins-font">TRIER PAR</button>
                 <div class="dropdown-content">
-                    <a href="#" class="filter-type" data-type="argentique">Argentique</a>
-                    <a href="#" class="filter-type" data-type="numerique">Numérique</a>
+                    <a href="#" class="filter-annee" data-type="ascendant">DATE-ordre croissant</a>
+                    <a href="#" class="filter-annee" data-type="descendant">DATE-ordre décroissant</a>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@ get_header();
                     $annee = get_field('annee');
                     $categorie = get_field('categorie');
                     $format = get_field('format');
-                    $Référence = get_field('Référence');
+                    $Référence = get_field('reference');
                     $type = get_field('type');
 
                     // Ajoutez une classe et des attributs data avec les données

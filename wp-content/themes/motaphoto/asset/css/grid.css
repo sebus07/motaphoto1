@@ -20,6 +20,12 @@
     max-width: 590px;
 }
 
+.grid-item:hover {
+    opacity: 0.8; /* Par exemple, réduire l'opacité de l'image */
+    transition: opacity 0.3s ease; /* Ajouter une transition pour une animation fluide */
+}
+
+
 .grid-item img {
     width: 584px; 
     height: 495px; 

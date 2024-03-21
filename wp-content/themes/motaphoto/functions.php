@@ -18,8 +18,7 @@ function motaphoto1_enqueue_assets()
     wp_enqueue_script('mon_script_js', get_stylesheet_directory_uri() . '/asset/js/mon_script.js', array('jquery'), '1.0', true);
 
     // Localize script with AJAX URL
-    wp_localize_script('mon_script_js', 'ajaxurl', admin_url('admin-ajax.php'));
-}
+    wp_add_inline_script( 'mon_script_js', 'var ajaxurl = ' . wp_json_encode( admin_url('admin-ajax.php') ) . ';' );}
 
 add_action('wp_enqueue_scripts', 'motaphoto1_enqueue_assets');
 
@@ -506,27 +505,22 @@ function load_photos_by_portrait()
 }
 
 
-// Fonction pour charger les photos par type (argentique ou numérique) via AJAX
-// Fonction pour charger les photos selon le type sélectionné
-add_action('wp_ajax_load_photos_by_type', 'load_photos_by_type');
-add_action('wp_ajax_nopriv_load_photos_by_type', 'load_photos_by_type'); // Pour les utilisateurs non connectés
+// Fonction pour charger les photos triées par année via AJAX
+add_action('wp_ajax_load_photos_sorted_by_year', 'load_photos_sorted_by_year');
+add_action('wp_ajax_nopriv_load_photos_sorted_by_year', 'load_photos_sorted_by_year'); // Pour les utilisateurs non connectés
 
-function load_photos_by_type()
+function load_photos_sorted_by_year()
 {
     $page = $_POST['page'];
-    $filter_type = $_POST['filter_type'];
+    $order_by = $_POST['order_by'];
 
     $args = array(
         'post_type' => 'cif_FichierPhotos',
         'posts_per_page' => 8,
         'paged' => $page,
-        'meta_query' => array(
-            array(
-                'key' => 'type',
-                'value' => $filter_type, // Utiliser le type de filtre passé depuis AJAX
-                'compare' => '=',
-            ),
-        ),
+        'meta_key' => 'Annee', // Tri par le champ 'Annee'
+        'orderby' => 'meta_value_num',
+        'order' => $order_by // Utiliser l'ordre de tri spécifié
     );
 
     $query = new WP_Query($args);

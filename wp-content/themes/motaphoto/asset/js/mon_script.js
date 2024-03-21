@@ -318,37 +318,42 @@ jQuery(function($){
 })
 
 
+////////////// trier par date///////////////////////////////////
 
-
-jQuery(function($){
+jQuery(function($) {
     var page = 1;
     var canBeLoaded = true;
+    var orderBy = ''; // Variable pour stocker l'ordre de tri
 
-    // Fonction pour charger les photos selon le type sélectionné
-    $('.filter-type').on('click', function(e){
+    // Fonction pour charger les photos triées par année
+    $('.filter-annee').on('click', function(e) {
         e.preventDefault();
-        var filterType = $(this).data('type');
-        
-        if(canBeLoaded){
+        var orderType = $(this).data('type'); // Récupérer l'ordre de tri depuis l'attribut de données
+
+        // Déterminer l'ordre de tri en fonction du type spécifié
+        if (orderType === 'ascendant') {
+            orderBy = 'ASC';
+        } else if (orderType === 'descendant') {
+            orderBy = 'DESC';
+        }
+
+        if (canBeLoaded) {
             $.ajax({
                 url: ajaxurl,
                 type: 'post',
                 data: {
-                    action: 'load_photos_by_type', // Utiliser la même action pour charger les photos par type
+                    action: 'load_photos_sorted_by_year', // Action pour charger les photos triées par année
                     page: page,
-                    filter_type: filterType, // Passer le type de filtre
+                    order_by: orderBy // Passer l'ordre de tri
                 },
-                beforeSend:function(){
+                beforeSend: function() {
                     $('.grid').html(''); // Efface les photos actuelles avant de charger les nouvelles
-                    $('.dropbtn2').text('TRIER PAR');
                 },
-                success:function(response){
-                    if(response){
+                success: function(response) {
+                    if (response) {
                         $('.grid').append(response);
                         page++;
-                        $('.dropbtn2').text('TRIER PAR');
                     } else {
-                        $('.dropbtn2').text('Aucune photo trouvée');
                         canBeLoaded = false;
                     }
                 }
@@ -356,8 +361,7 @@ jQuery(function($){
         }
     });
 });
-
-
+///////////////////////////
 
 ////////menu burger//////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", function() {
@@ -491,7 +495,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Sélectionner la modal et le champ de formulaire
     var modal = document.getElementById('modal-contact');
-    var referenceField = document.getElementById('wpforms-29-field_3');
+    var referenceField = document.getElementById('wpforms-102-field_3');
     
     // Gérer le clic sur le bouton "Contact"
     contactButton.addEventListener('click', function() {

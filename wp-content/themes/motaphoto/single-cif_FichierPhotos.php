@@ -8,7 +8,7 @@ $annee = get_field('annee');
 $categorie = get_field('categorie');
 $format = get_field('format');
 $image = get_field('image');
-$reference = get_field('Référence');
+$reference = get_field('reference');
 $type = get_field('type');
 get_header();
 
@@ -20,7 +20,7 @@ if (have_posts()) :
         $categorie = get_field('categorie');
         $format = get_field('format');
         $image = get_field('image');
-        $reference = get_field('Référence');
+        $reference = get_field('reference');
         $type = get_field('type');
         
         // Afficher les détails de la photo à gauche et la photo à droite

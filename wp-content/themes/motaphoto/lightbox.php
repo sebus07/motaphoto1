@@ -18,7 +18,7 @@
 if (have_posts()) :
     while (have_posts()) : the_post();
         $image = get_field('image');
-        $reference = get_field('Référence');
+        $reference = get_field('reference');
         $categorie = get_field('categorie'); // Récupérer la valeur de la catégorie
         if ($image) {
             echo '<div class="thumbnail-container">';
