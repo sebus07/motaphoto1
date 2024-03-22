@@ -36,7 +36,7 @@ if (have_posts()) :
 
         // Afficher l'image à droite
         if ($image) {
-            echo '<div class="photo-image">';
+            echo '<div class="photo-image survol-photo">';
             echo '<a class="lightbox-trigger" href="#lightbox-container">'; // Ajout de la classe "lightbox-trigger" et de l'attribut href vers l'ID de la lightbox
             echo '<img src="' . $image['url'] . '" alt="' . get_the_title() . '">';
             echo '</a>';

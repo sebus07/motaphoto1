@@ -73,7 +73,7 @@ get_header();
 
                     // Ajoutez une classe et des attributs data avec les données
                     if ($image) {
-                        echo '<div class="grid-item">';
+                        echo '<div class="grid-item survol-photo">';
                         // Ajoutez le lien autour de l'image avec une classe spécifique pour sélectionner avec JavaScript
                         echo '<a href="' . esc_url(get_permalink()) . '" class="photo-link">';
                         echo '<img class="photo-clickable" data-annee="' . $annee . '" data-categorie="' . $categorie . '" data-format="' . $format . '" data-referentiel="' . $Référence . '" data-type="' . $type . '" src="' . $image['url'] . '" alt="' . get_the_title() . '">';
