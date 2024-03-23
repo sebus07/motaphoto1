@@ -231,18 +231,25 @@ section {
         .filtres2 .dropdown{
             margin-right: 25px;
         }
-        .thumbnail {
-            display:none;
-        }
+
 
         .centre7{
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .lightbox-trigger img{
-            width: 265px;
+
+        .photo-image img {
+            width: 265px !important;
             height: auto;
+            top: 92px;
+            left: 56px;
+        }
+        .lightbox-trigger img{
+            width: 265px !important;
+            height: auto;
+            top: 92px;
+            left: 56px;
         }
         .photo-image{
             display: flex;

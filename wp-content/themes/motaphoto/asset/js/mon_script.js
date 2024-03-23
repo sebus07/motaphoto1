@@ -20,348 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-////requete ajax pour charger plus////////////////
-jQuery(function($){
-    var page = 2;
-    var canBeLoaded = true;
-
-    $('.dropbtn3').on('click', function(){
-        if(canBeLoaded){
-            $.ajax({
-                url: ajaxurl,
-                type: 'post',
-                data: {
-                    action: 'load_more_photos',
-                    page: page,
-                },
-                beforeSend:function(){
-                    $('.dropbtn3').text('Chargement...');
-                },
-                success:function(response){
-                    if(response){
-                        $('.grid').append(response);
-                        page++;
-                        $('.dropbtn3').text('Charger plus');
-                    } else {
-                        $('.dropbtn3').text('Fin des photo');
-                        canBeLoaded = false;
-                    }
-                }
-            });
-        }
-    });
-});
 
 
 
-jQuery(function($){
-    var page = 1;
-    var canBeLoaded = true;
 
-    $('.dropbtn3').on('click', function(){
-        if(canBeLoaded){
-            $.ajax({
-                url: ajaxurl,
-                type: 'post',
-                data: {
-                    action: 'load_more_photos',
-                    page: page,
-                    filter: 'mariage' // Passer le filtre pour la catégorie "Mariage"
-                },
-                beforeSend:function(){
-                    $('.dropbtn3').text('Chargement...');
-                },
-                success:function(response){
-                    if(response){
-                        $('.grid').append(response);
-                        page++;
-                        $('.dropbtn3').text('Charger plus');
-                    } else {
-                        $('.dropbtn3').text('Fin des photos');
-                        canBeLoaded = false;
-                    }
-                }
-            });
-        }
-    });
-
-    // Ajouter un événement de clic pour les images chargées
-    $('.grid').on('click', '.grid-item a', function(e){
-        e.preventDefault(); // Empêcher le lien par défaut
-        var link = $(this).attr('href');
-
-    });
-});
-
-
-/////////////requete ajax pour filter les categorie///////////////////////
-
-jQuery(function($){
-    var page = 1;
-    var canBeLoaded = true;
-
-    // Fonction pour charger les photos de la catégorie "Mariage" via AJAX
-    $('.filter-mariage').on('click', function(e){
-        e.preventDefault();
-        
-        if(canBeLoaded){
-            $.ajax({
-                url: ajaxurl,
-                type: 'post',
-                data: {
-                    action: 'load_photos_by_mariage',
-                    page: page,
-                },
-                beforeSend:function(){
-                    $('.grid').html(''); // Efface les photos actuelles avant de charger les nouvelles
-                    $('.dropbtn3').text('Chargement...');
-                },
-                success:function(response){
-                    if(response){
-                        $('.grid').append(response);
-                        page++;
-                        $('.dropbtn3').text('Charger plus');
-                    } else {
-                        $('.dropbtn3').text('Aucune photo trouvée');
-                        canBeLoaded = false;
-                    }
-                }
-            });
-        }
-    });
-})
-
-
-/////////////concert
-
-jQuery(function($){
-    var page = 1;
-    var canBeLoaded = true;
-
-    // Fonction pour charger les photos de la catégorie "Concert" via AJAX
-    $('.filter-concert').on('click', function(e){
-        e.preventDefault();
-        
-        if(canBeLoaded){
-            $.ajax({
-                url: ajaxurl,
-                type: 'post',
-                data: {
-                    action: 'load_photos_by_concert',
-                    page: page,
-                },
-                beforeSend:function(){
-                    $('.grid').html(''); // Efface les photos actuelles avant de charger les nouvelles
-                    $('.dropbtn3').text('Chargement...');
-                },
-                success:function(response){
-                    if(response){
-                        $('.grid').append(response);
-                        page++;
-                        $('.dropbtn3').text('Charger plus');
-                    } else {
-                        $('.dropbtn3').text('Aucune photo trouvée');
-                        canBeLoaded = false;
-                    }
-                }
-            });
-        }
-    });
-})
-
-/////////////television
-
-jQuery(function($){
-    var page = 1;
-    var canBeLoaded = true;
-
-    // Fonction pour charger les photos de la catégorie "television" via AJAX
-    $('.filter-television').on('click', function(e){
-        e.preventDefault();
-        
-        if(canBeLoaded){
-            $.ajax({
-                url: ajaxurl,
-                type: 'post',
-                data: {
-                    action: 'load_photos_by_television',
-                    page: page,
-                },
-                beforeSend:function(){
-                    $('.grid').html(''); // Efface les photos actuelles avant de charger les nouvelles
-                    $('.dropbtn3').text('Chargement...');
-                },
-                success:function(response){
-                    if(response){
-                        $('.grid').append(response);
-                        page++;
-                        $('.dropbtn3').text('Charger plus');
-                    } else {
-                        $('.dropbtn3').text('Aucune photo trouvée');
-                        canBeLoaded = false;
-                    }
-                }
-            });
-        }
-    });
-})
-
-/////////////reception
-
-jQuery(function($){
-    var page = 1;
-    var canBeLoaded = true;
-
-    // Fonction pour charger les photos de la catégorie "reception" via AJAX
-    $('.filter-reception').on('click', function(e){
-        e.preventDefault();
-        
-        if(canBeLoaded){
-            $.ajax({
-                url: ajaxurl,
-                type: 'post',
-                data: {
-                    action: 'load_photos_by_reception',
-                    page: page,
-                },
-                beforeSend:function(){
-                    $('.grid').html(''); // Efface les photos actuelles avant de charger les nouvelles
-                    $('.dropbtn3').text('Chargement...');
-                },
-                success:function(response){
-                    if(response){
-                        $('.grid').append(response);
-                        page++;
-                        $('.dropbtn3').text('Charger plus');
-                    } else {
-                        $('.dropbtn3').text('Aucune photo trouvée');
-                        canBeLoaded = false;
-                    }
-                }
-            });
-        }
-    });
-})
-
-/////////////format paysage///////////////////////////////////////////////////////////////
-
-jQuery(function($){
-    var page = 1;
-    var canBeLoaded = true;
-
-    // Fonction pour charger les photos du format "paysage" via AJAX
-    $('.filter-paysage').on('click', function(e){
-        e.preventDefault();
-        
-        if(canBeLoaded){
-            $.ajax({
-                url: ajaxurl,
-                type: 'post',
-                data: {
-                    action: 'load_photos_by_paysage',
-                    page: page,
-                },
-                beforeSend:function(){
-                    $('.grid').html(''); // Efface les photos actuelles avant de charger les nouvelles
-                    $('.dropbtn3').text('Chargement...');
-                },
-                success:function(response){
-                    if(response){
-                        $('.grid').append(response);
-                        page++;
-                        $('.dropbtn3').text('Charger plus');
-                    } else {
-                        $('.dropbtn3').text('Aucune photo trouvée');
-                        canBeLoaded = false;
-                    }
-                }
-            });
-        }
-    });
-})
-
-/////////////format portrait///////////////////////////////////////////////////////////////
-
-jQuery(function($){
-    var page = 1;
-    var canBeLoaded = true;
-
-    // Fonction pour charger les photos du format "portrait" via AJAX
-    $('.filter-portrait').on('click', function(e){
-        e.preventDefault();
-        
-        if(canBeLoaded){
-            $.ajax({
-                url: ajaxurl,
-                type: 'post',
-                data: {
-                    action: 'load_photos_by_portrait',
-                    page: page,
-                },
-                beforeSend:function(){
-                    $('.grid').html(''); // Efface les photos actuelles avant de charger les nouvelles
-                    $('.dropbtn3').text('Chargement...');
-                },
-                success:function(response){
-                    if(response){
-                        $('.grid').append(response);
-                        page++;
-                        $('.dropbtn3').text('Charger plus');
-                    } else {
-                        $('.dropbtn3').text('Aucune photo trouvée');
-                        canBeLoaded = false;
-                    }
-                }
-            });
-        }
-    });
-})
-
-
-////////////// trier par date///////////////////////////////////
-
-jQuery(function($) {
-    var page = 1;
-    var canBeLoaded = true;
-    var orderBy = ''; // Variable pour stocker l'ordre de tri
-
-    // Fonction pour charger les photos triées par année
-    $('.filter-annee').on('click', function(e) {
-        e.preventDefault();
-        var orderType = $(this).data('type'); // Récupérer l'ordre de tri depuis l'attribut de données
-
-        // Déterminer l'ordre de tri en fonction du type spécifié
-        if (orderType === 'ascendant') {
-            orderBy = 'ASC';
-        } else if (orderType === 'descendant') {
-            orderBy = 'DESC';
-        }
-
-        if (canBeLoaded) {
-            $.ajax({
-                url: ajaxurl,
-                type: 'post',
-                data: {
-                    action: 'load_photos_sorted_by_year', // Action pour charger les photos triées par année
-                    page: page,
-                    order_by: orderBy // Passer l'ordre de tri
-                },
-                beforeSend: function() {
-                    $('.grid').html(''); // Efface les photos actuelles avant de charger les nouvelles
-                },
-                success: function(response) {
-                    if (response) {
-                        $('.grid').append(response);
-                        page++;
-                    } else {
-                        canBeLoaded = false;
-                    }
-                }
-            });
-        }
-    });
-});
-///////////////////////////
 
 ////////menu burger//////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", function() {
@@ -394,42 +56,12 @@ jQuery(function($){
     var page = 1;
     var canBeLoaded = true;
 
- 
-    // Filtrer par catégorie
-    $('.filter-category').on('click', function(e){
-        e.preventDefault();
-        var filterCategory = $(this).data('category');
-        loadFilteredPhotos(filterCategory, '', '');
-    });
-
-    // Filtrer par format
-    $('.filter-format').on('click', function(e){
-        e.preventDefault();
-        var filterFormat = $(this).data('format');
-        loadFilteredPhotos('', filterFormat, '');
-    });
-
-    // Trier les photos
-    $('.sort-by').on('click', function(e){
-        e.preventDefault();
-        var sortBy = $(this).data('sort');
-        loadFilteredPhotos('', '', sortBy);
-    });
-
-    // Charger plus de photos
-    $('.dropbtn3').on('click', function(){
-        var filterCategory = $('.filter-category.active').data('category');
-        var filterFormat = $('.filter-format.active').data('format');
-        var sortBy = $('.sort-by.active').data('sort');
-        loadFilteredPhotos(filterCategory, filterFormat, sortBy);
-    });
-
     // Ajouter un événement de clic pour les images chargées
     $('.grid').on('click', '.grid-item a', function(e){
         e.preventDefault(); // Empêcher le lien par défaut
         var link = $(this).attr('href');
         // Ouvrir le lien dans une nouvelle fenêtre
-        window.open(link, '_blank');
+        window.open(link, '_self');
     });
 
     // Menu burger
@@ -464,25 +96,13 @@ jQuery(function($){
         });
     }
 
-    // Afficher la modal contact en cliquant sur le lien CONTACT
-    $('#menu-item-20 a').on('click', function(e){
-        e.preventDefault();
-        var modal = document.getElementById('modal-contact');
-        modal.style.display = 'block';
-    });
-
-    // Fermer la modal contact en cliquant sur le bouton de fermeture
-    $('.close').on('click', function(){
-        var modal = document.getElementById('modal-contact');
-        modal.style.display = 'none';
-    });
-
-    // Fermer la modal contact en cliquant en dehors de la modal
-    window.addEventListener('click', function(event) {
-        var modal = document.getElementById('modal-contact');
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
+    $(document).ready(function() {
+        // Afficher la modal contact en cliquant sur le lien CONTACT dans le menu
+        $('#menu-item-101 a').on('click', function(e){
+            e.preventDefault();
+            var modal = document.getElementById('modal-contact');
+            modal.style.display = 'block';
+        });
     });
 });
 
@@ -530,30 +150,26 @@ document.addEventListener('DOMContentLoaded', function() {
 /////// ligntbox//////////////////////////////
 
 document.addEventListener("DOMContentLoaded", function() {
-    const thumbnails = document.querySelectorAll(".thumbnail");
-    const lightbox = document.getElementById("lightbox");
-    const theNextPhoto = document.getElementById("nextPhoto");
-    const thePreviousPhoto = document.getElementById("previousPhoto");
-    const miniatureNextPhoto = document.getElementById("nextPhoto2");
-    const miniaturethePreviousPhoto = document.getElementById("previousPhoto2");
     const lightboxImage = document.querySelector(".lightbox-image");
-    const lightboxReference = document.querySelector(".reference");
-    const lightboxCategorie = document.querySelector(".categorie");
+    const lightbox = document.getElementById("lightbox");
     const closeBtn = document.querySelector(".close-btn");
-    const lightboxContainer = document.querySelector("#lightbox");
+    const previousBtn = document.getElementById("previousPhoto");
+    
+    const nextBtn = document.getElementById("nextPhoto");
+    const photos = document.querySelectorAll('.photo-image img'); // Sélectionnez toutes les grandes images
 
-    let currentIndex = 0; // Variable pour suivre l'index de la photo actuellement affichée dans la lightbox
+    let currentIndex = 0;
 
     // Fonction pour ouvrir la lightbox avec la photo correspondante
     function openLightbox(index) {
-        const thumbnail = thumbnails[index];
-        const imageSrc = thumbnail.src;
-        const reference = thumbnail.getAttribute("data-reference");
-        const categorie = thumbnail.getAttribute("data-categorie");
+        const photo = photos[index];
+        const imageSrc = photo.src;
+        const reference = photo.getAttribute("data-reference");
+        const categorie = photo.getAttribute("data-categorie");
 
         lightboxImage.src = imageSrc;
-        lightboxReference.textContent = "Référence : " + reference;
-        lightboxCategorie.textContent = "Catégorie : " + categorie;
+        document.querySelector(".reference").textContent = "Référence : " + reference;
+        document.querySelector(".categorie").textContent = "Catégorie : " + categorie;
         lightbox.style.display = "block";
         currentIndex = index;
     }
@@ -567,30 +183,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Fonction pour passer à la photo suivante dans la lightbox
     function nextLightboxPhoto() {
-        if (currentIndex < thumbnails.length - 1) {
+        if (currentIndex < photos.length - 1) {
             openLightbox(currentIndex + 1);
         }
     }
 
-    // Ajout d'écouteurs d'événements aux boutons de navigation dans la lightbox
-    thePreviousPhoto.addEventListener("click", previousLightboxPhoto);
-    theNextPhoto.addEventListener("click", nextLightboxPhoto);
+    // Ajout d'écouteurs d'événements pour les boutons de navigation précédent et suivant
+    previousBtn.addEventListener("click", previousLightboxPhoto);
+    nextBtn.addEventListener("click", nextLightboxPhoto);
 
-    // Ajout d'écouteurs d'événements aux boutons de navigation dans la galerie miniature
-    miniaturethePreviousPhoto.addEventListener("click", function() {
-        if (currentIndex > 0) {
-            thumbnails[currentIndex - 1].click();
-        }
-    });
-    miniatureNextPhoto.addEventListener("click", function() {
-        if (currentIndex < thumbnails.length - 1) {
-            thumbnails[currentIndex + 1].click();
-        }
-    });
-
-    // Ajouter un écouteur d'événement à chaque miniature
-    thumbnails.forEach((thumbnail, index) => {
-        thumbnail.addEventListener("click", function() {
+    // Ajouter un écouteur d'événement à chaque grande photo
+    photos.forEach((photo, index) => {
+        photo.addEventListener("click", function() {
             openLightbox(index);
         });
     });
@@ -602,5 +206,47 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-/////////////////////////////////photo yeux///////////////////
+
+/////////////////////////////////gestion de la modal contact///////////////////
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Sélectionner la modal et le bouton de fermeture
+    var modal = document.getElementById('modal-contact');
+    var closeButton = modal.querySelector('.close');
+
+    // Initialiser la modal comme masquée au chargement de la page
+    modal.style.display = 'none';
+
+    // Fermer la modal lorsqu'on clique sur le bouton de fermeture de la modal
+    closeButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+// Modal contact lors du clic sur le lien dans le menu
+jQuery(document).ready(function($) {
+    $('#menu-item-101 a').on('click', function(e){
+        e.preventDefault();
+        var modal = document.getElementById('modal-contact');
+        modal.style.display = 'block';
+    });
+});
+
+// Fermeture de la modal au clic sur le bouton de fermeture
+jQuery(document).ready(function($) {
+    $('.close').on('click', function(){
+        var modal = document.getElementById('modal-contact');
+        modal.style.display = 'none';
+    });
+});
+
+
+
+
 

@@ -38,7 +38,7 @@ if (have_posts()) :
         if ($image) {
             echo '<div class="photo-image survol-photo">';
             echo '<a class="lightbox-trigger" href="#lightbox-container">'; // Ajout de la classe "lightbox-trigger" et de l'attribut href vers l'ID de la lightbox
-            echo '<img src="' . $image['url'] . '" alt="' . get_the_title() . '">';
+            echo '<img src="' . $image['url'] . '" alt="' . get_the_title() .'" alt="' . get_the_title() . '" data-reference="' . $reference . '" data-categorie="' . $categorie . '">';
             echo '</a>';
             echo '</div>';
         } else {

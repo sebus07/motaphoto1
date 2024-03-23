@@ -1,17 +1,9 @@
-[21-Mar-2024 14:23:34 UTC] PHP Notice:  La fonction WP_Scripts::localize a été appelée de façon incorrecte. Le paramètre $l10n doit être un tableau. Pour transmettre des données arbitraires aux scripts, utilisez plutôt la fonction wp_add_inline_script(). Veuillez lire <a>Débogage dans WordPress</a> (en) pour plus d’informations. (Ce message a été ajouté à la version 5.7.0.) in C:\MAMP\htdocs\motaphoto\wp-includes\functions.php on line 6031
-[21-Mar-2024 14:23:40 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "load_photos_sorted_by_annee" not found or invalid function name in C:\MAMP\htdocs\motaphoto\wp-includes\class-wp-hook.php:324
-Stack trace:
-#0 C:\MAMP\htdocs\motaphoto\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
-#1 C:\MAMP\htdocs\motaphoto\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
-#2 C:\MAMP\htdocs\motaphoto\wp-admin\admin-ajax.php(188): do_action('wp_ajax_load_ph...')
-#3 {main}
-  thrown in C:\MAMP\htdocs\motaphoto\wp-includes\class-wp-hook.php on line 324
-[21-Mar-2024 14:25:31 UTC] PHP Notice:  La fonction WP_Scripts::localize a été appelée de façon incorrecte. Le paramètre $l10n doit être un tableau. Pour transmettre des données arbitraires aux scripts, utilisez plutôt la fonction wp_add_inline_script(). Veuillez lire <a>Débogage dans WordPress</a> (en) pour plus d’informations. (Ce message a été ajouté à la version 5.7.0.) in C:\MAMP\htdocs\motaphoto\wp-includes\functions.php on line 6031
-[21-Mar-2024 14:25:55 UTC] PHP Notice:  La fonction WP_Scripts::localize a été appelée de façon incorrecte. Le paramètre $l10n doit être un tableau. Pour transmettre des données arbitraires aux scripts, utilisez plutôt la fonction wp_add_inline_script(). Veuillez lire <a>Débogage dans WordPress</a> (en) pour plus d’informations. (Ce message a été ajouté à la version 5.7.0.) in C:\MAMP\htdocs\motaphoto\wp-includes\functions.php on line 6031
-[21-Mar-2024 14:26:26 UTC] PHP Notice:  La fonction WP_Scripts::localize a été appelée de façon incorrecte. Le paramètre $l10n doit être un tableau. Pour transmettre des données arbitraires aux scripts, utilisez plutôt la fonction wp_add_inline_script(). Veuillez lire <a>Débogage dans WordPress</a> (en) pour plus d’informations. (Ce message a été ajouté à la version 5.7.0.) in C:\MAMP\htdocs\motaphoto\wp-includes\functions.php on line 6031
-[21-Mar-2024 15:01:57 UTC] PHP Warning:  Undefined array key "mariage" in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\functions.php on line 173
-[21-Mar-2024 15:02:06 UTC] PHP Warning:  Undefined array key "mariage" in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\functions.php on line 173
-[21-Mar-2024 15:02:41 UTC] PHP Warning:  Undefined array key "mariage" in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\functions.php on line 173
-[21-Mar-2024 15:02:52 UTC] PHP Warning:  Undefined array key "mariage" in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\functions.php on line 173
-[21-Mar-2024 15:03:08 UTC] PHP Warning:  Undefined array key "mariage" in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\functions.php on line 173
-[21-Mar-2024 15:04:20 UTC] PHP Warning:  Undefined array key "filter" in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\functions.php on line 84
+[23-Mar-2024 07:19:02 UTC] PHP Warning:  Attempt to read property "title" on null in C:\MAMP\htdocs\motaphoto\wp-includes\class-wp-customize-widgets.php on line 905
+[23-Mar-2024 07:25:02 UTC] PHP Deprecated:  La fonction print_emoji_styles est obsolète depuis la version 6.4.0 ! Utilisez wp_enqueue_emoji_styles à la place. in C:\MAMP\htdocs\motaphoto\wp-includes\functions.php on line 6031
+[23-Mar-2024 19:35:15 UTC] PHP Deprecated:  La fonction the_block_template_skip_link est obsolète depuis la version 6.4.0 ! Utilisez wp_enqueue_block_template_skip_link() à la place. in C:\MAMP\htdocs\motaphoto\wp-includes\functions.php on line 6031
+[23-Mar-2024 19:35:17 UTC] PHP Deprecated:  La fonction the_block_template_skip_link est obsolète depuis la version 6.4.0 ! Utilisez wp_enqueue_block_template_skip_link() à la place. in C:\MAMP\htdocs\motaphoto\wp-includes\functions.php on line 6031
+[23-Mar-2024 20:19:07 UTC] PHP Parse error:  syntax error, unexpected token ")", expecting variable in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\functions.php on line 79
+[23-Mar-2024 20:19:56 UTC] PHP Parse error:  syntax error, unexpected token ")", expecting variable in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\functions.php on line 77
+[23-Mar-2024 20:19:56 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\MAMP\htdocs\motaphoto\wp-includes\class-wp-recovery-mode-email-service.php on line 367
+[23-Mar-2024 20:19:56 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\MAMP\htdocs\motaphoto\wp-includes\class-wp-recovery-mode-email-service.php on line 368
+[23-Mar-2024 20:30:43 UTC] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\MAMP\htdocs\motaphoto\wp-admin\includes\misc.php on line 1645
