@@ -10,6 +10,7 @@ get_header();
 ?>
 
 </head>
+
 <body>
     <div class="hero">
         <a href="#">
@@ -19,225 +20,192 @@ get_header();
     <section class="">
         <div class="filtres">
             <div class="dropdown">
-                <button class="dropbtn poppins-font">CATÉGORIES</button>
-                <div class="dropdown-content poppins-font">
-                    <a href="#" class="filter-category" data-category="reception">Réception</a>
-                    <a href="#" class="filter-category" data-category="television">Télévision</a>
-                    <a href="#" class="filter-category" data-category="concert">Concert</a>
-                    <a href="#" class="filter-category" data-category="mariage">Mariage</a>
-                </div>
+                <select id="categorie-select" class="home-filter dropbtn poppins-font dropbtn poppins-font">
+                    <option value="all">Catégories</option>
+                    <?php
+                    // Récupérer tous les termes de la taxonomie catégorie
+                    $terms = get_terms(array(
+                        'taxonomy' => 'categorie',
+                        'hide_empty' => false,
+                    ));
+                    // Vérifier s'il y a des termes
+                    if ($terms && !is_wp_error($terms)) {
+                        foreach ($terms as $term) {
+                            echo '<option value="' . $term->slug . '">' . $term->name . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <div class="dropdown poppins-font">
-                <button class="dropbtn poppins-font">FORMATS</button>
-                <div class="dropdown-content">
-                    <a href="#" class="filter-format" data-format="paysage">Paysage</a>
-                    <a href="#" class="filter-format" data-format="portrait">Portrait</a>
-                </div>
+                <select id="format-select" class="home-filter  dropbtn poppins-font">
+                    <option value="all">Formats</option>
+                    <?php
+                    // Récupérer tous les termes de la taxonomie format
+                    $terms = get_terms(array(
+                        'taxonomy' => 'format',
+                        'hide_empty' => false,
+                    ));
+                    // Vérifier s'il y a des termes
+                    if ($terms && !is_wp_error($terms)) {
+                        foreach ($terms as $term) {
+                            echo '<option value="' . $term->slug . '">' . $term->name . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
             </div>
-        </div>
-        <div class="filtres2">
-            <div class="dropdown">
-                <button class="dropbtn2 poppins-font">TRIER PAR</button>
-                <div class="dropdown-content">
-                    <a href="#" class="filter-date" data-order="ascendant">DATE-ordre croissant</a>
-                    <a href="#" class="filter-date" data-order="descendant">DATE-ordre décroissant</a>
-                </div>
+            <div class="dropdown poppins-font">
+                <select id="filtre-select" class="home-filter dropbtn2 poppins-font">
+                    <option value="all">Trier par</option>
+                    <?php
+                    // Récupérer tous les termes de la taxonomie année
+                    $terms = get_terms(array(
+                        'taxonomy' => 'annee',
+                        'hide_empty' => false,
+                    ));
+                    // Vérifier s'il y a des termes
+                    if ($terms && !is_wp_error($terms)) {
+                        foreach ($terms as $term) {
+                            echo '<option value="' . $term->slug . '">' . $term->name . '</option>';
+                        }
+                    }
+                    ?>
+                    <optgroup label="Filtrer par date">
+                        <option value="ascendant">DATE-ordre croissant</option>
+                        <option value="descendant">DATE-ordre décroissant</option>
+                    </optgroup>
+                </select>
             </div>
         </div>
     </section>
     <div class="photo">
-        <div class="grid">
-            <?php
-            $args = array(
-                'post_type' => 'cif_FichierPhotos', // Votre type de post personnalisé
-                'posts_per_page' => 8, // Pour afficher tous les posts, utilisez -1
-            );
+    <div class="grid">
+        <?php
+        $args = array(
+            'post_type' => 'cif_FichierPhotos', // Votre type de post personnalisé
+            'posts_per_page' => -1, // -1 pour afficher tous les posts
+        );
 
-            $query = new WP_Query($args);
+        $query = new WP_Query($args);
 
-            if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();
+        $count = 0; // Initialiser le compteur de photos
+        $hidden_photos = array(); // Initialiser un tableau pour stocker les photos cachées
 
-                    // Récupérer l'image depuis le champ ACF 'image'
-                    $image = get_field('image');
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
 
-                    // Autres champs que vous souhaitez passer
-                    $annee = get_field('annee');
-                    $categorie = get_field('categorie');
-                    $format = get_field('format');
-                    $Référence = get_field('reference');
-                    $type = get_field('type');
+                // Récupérer les données pertinentes
+                $categorie = get_field('categorie');
+                $format = get_field('format');
+                $annee = get_field('annee');
+                $image = get_field('image');
 
-                    // Ajoutez une classe et des attributs data avec les données
-                    if ($image) {
-                        echo '<div class="grid-item survol-photo ' . $categorie . ' ' . $format . '">';
-                        // Ajoutez le lien autour de l'image avec une classe spécifique pour sélectionner avec JavaScript
-                        echo '<a href="' . esc_url(get_permalink()) . '" class="photo-link">';
-                        echo '<img class="photo-clickable" data-annee="' . $annee . '" data-categorie="' . $categorie . '" data-format="' . $format . '" data-referentiel="' . $Référence . '" data-type="' . $type . '" src="' . $image['url'] . '" alt="' . get_the_title() . '">';
-                        echo '</a>';
-                        echo '</div>';
-                    }
+                // Vérifier si le compteur est inférieur à 8
+                if ($count < 8) {
+                    // Si oui, afficher la photo normalement
+                    echo '<div class="grid-item survol-photo" data-categorie="' . $categorie . '" data-format="' . $format . '" data-annee="' . $annee . '">';
+                    echo '<a href="' . esc_url(get_permalink()) . '" class="photo-link">';
+                    echo '<img class="photo-clickable" src="' . $image['url'] . '" alt="' . get_the_title() . '">';
+                    echo '</a>';
+                    echo '</div>';
+
+                    $count++; // Incrémenter le compteur de photos affichées
+                } else {
+                    // Sinon, cacher la photo et la stocker dans le tableau des photos cachées
+                    $hidden_photos[] = '<div class="grid-item survol-photo hidden" data-categorie="' . $categorie . '" data-format="' . $format . '" data-annee="' . $annee . '">'
+                                        . '<a href="' . esc_url(get_permalink()) . '" class="photo-link">'
+                                        . '<img class="photo-clickable" src="' . $image['url'] . '" alt="' . get_the_title() . '">'
+                                        . '</a>'
+                                        . '</div>';
                 }
-
-                wp_reset_postdata(); // Réinitialiser les données du post
-            } else {
-                // Aucun post trouvé
-                echo 'Aucun FichierPhoto trouvé.';
             }
-            ?>
-        </div>
+
+            wp_reset_postdata(); // Réinitialiser les données du post
+        } else {
+            // Aucun post trouvé
+            echo 'Aucun FichierPhoto trouvé.';
+        }
+
+        // Afficher les photos cachées
+        foreach ($hidden_photos as $hidden_photo) {
+            echo $hidden_photo;
+        }
+        ?>
     </div>
+</div>
+
+
 
     <div class="chargerplus motaphoto-font">
         <button class="dropbtn3 motaphoto-font">Charger plus</button>
     </div>
-
-    <!-- Vos balises de pied de page ici -->
-
-    <!-- Ajoutez ce code JavaScript à la fin de votre page HTML -->
+    <!-- Votre code JavaScript précédent -->
     <script>
-        // Récupérer tous les éléments avec la classe "filter-category"
-        const categoryFilters = document.querySelectorAll('.filter-category');
-        // Récupérer tous les éléments avec la classe "filter-format"
-        const formatFilters = document.querySelectorAll('.filter-format');
-        // Récupérer tous les éléments avec la classe "filter-date"
-        const dateFilters = document.querySelectorAll('.filter-date');
-        // Sélectionner le bouton "Charger plus"
-        const loadMoreButton = document.querySelector('.dropbtn3');
+document.addEventListener('DOMContentLoaded', function() {
+    const categorieSelect = document.getElementById('categorie-select');
+    const formatSelect = document.getElementById('format-select');
+    const filtreSelect = document.getElementById('filtre-select');
+    const gridItems = document.querySelectorAll('.grid-item');
 
-        // Parcourir chaque filtre de catégorie et ajouter un gestionnaire d'événements de clic
-        categoryFilters.forEach(function(filter) {
-            filter.addEventListener('click', function(event) {
-                event.preventDefault(); // Empêcher le comportement par défaut du lien
-                const category = this.getAttribute('data-category');
-                // Afficher un message dans la console pour vérification
-                console.log('Filtre Catégorie ' + category + ' cliqué');
+    // Ajoutez un gestionnaire d'événements pour le changement de sélection de catégorie
+    categorieSelect.addEventListener('change', filterGridItems);
 
-                // Filtrer les éléments de la grille en fonction de la catégorie sélectionnée
-                filterGridItems(category);
+    // Ajoutez un gestionnaire d'événements pour le changement de sélection de format
+    formatSelect.addEventListener('change', filterGridItems);
 
-                // Charger 8 photos si la catégorie sélectionnée est "Réception"
-                if (category === 'reception') {
-                    loadFilteredPhotos();
-                }
-            });
-        });
+    // Ajoutez un gestionnaire d'événements pour le changement de sélection de filtre
+    filtreSelect.addEventListener('change', filterGridItems);
 
-        // Parcourir chaque filtre de format et ajouter un gestionnaire d'événements de clic
-        formatFilters.forEach(function(filter) {
-            filter.addEventListener('click', function(event) {
-                event.preventDefault(); // Empêcher le comportement par défaut du lien
-                const format = this.getAttribute('data-format');
-                // Afficher un message dans la console pour vérification
-                console.log('Filtre Format ' + format + ' cliqué');
+    function filterGridItems() {
+        const categorieValue = categorieSelect.value;
+        const formatValue = formatSelect.value;
+        const filtreValue = filtreSelect.value;
 
-                // Filtrer les éléments de la grille en fonction du format sélectionné
-                filterGridItems(format);
-            });
-        });
+        let count = 0; // Initialiser le compteur de photos
 
-        // Parcourir chaque filtre de date et ajouter un gestionnaire d'événements de clic
-        dateFilters.forEach(function(filter) {
-            filter
-            .addEventListener('click', function(event) {
-                event.preventDefault(); // Empêcher le comportement par défaut du lien
-                const order = this.getAttribute('data-order');
-                // Afficher un message dans la console pour vérification
-                console.log('Filtre Date ' + order + ' cliqué');
+        // Convertir les nœuds NodeList en un tableau pour faciliter le tri
+        const gridItemsArray = Array.from(gridItems);
 
-                // Trier les éléments de la grille en fonction de la date sélectionnée
-                sortGridItems(order);
-            });
-        });
+        gridItemsArray.sort(function(a, b) {
+            const dateA = a.getAttribute('data-annee');
+            const dateB = b.getAttribute('data-annee');
 
-        // Ajouter un gestionnaire d'événements de clic sur le bouton "Charger plus"
-        loadMoreButton.addEventListener('click', function() {
-            loadMorePhotos(); // Appel de la fonction pour charger plus de photos
-        });
-
-        // Fonction pour filtrer les éléments de la grille en fonction de la catégorie sélectionnée
-        function filterGridItems(filterValue) {
-            const
-            gridItems = document.querySelectorAll('.grid-item');
-            gridItems.forEach(function(item) {
-                if (filterValue === 'all') {
-                    item.style.display = 'block'; // Afficher tous les éléments si la valeur du filtre est "all"
-                } else {
-                    if (item.classList.contains(filterValue)) {
-                        item.style.display = 'block'; // Afficher l'élément s'il correspond au filtre sélectionné
-                    } else {
-                        item.style.display = 'none'; // Masquer l'élément s'il ne correspond pas au filtre sélectionné
-                    }
-                }
-            });
-        }
-
-    // Fonction pour charger 8 photos si la catégorie "Réception" est sélectionnée
-    function loadFilteredPhotos(category) {
-        const gridItems = document.querySelectorAll('.grid-item');
-        let count = 0;
-        gridItems.forEach(function(item) {
-            if (category === 'all' || item.classList.contains(category)) {
-                if (count < 8 && (category === 'reception' || !category)) {
-                    item.style.display = 'block'; // Afficher l'élément si la catégorie correspond et si le nombre maximum n'est pas atteint
-                    count++;
-                } else {
-                    item.style.display = 'none'; // Masquer l'élément si le nombre maximum est atteint ou si la catégorie n'est pas "Réception"
-                }
-            } else {
-                item.style.display = 'none'; // Masquer l'élément s'il ne correspond pas à la catégorie sélectionnée
+            if (filtreValue === 'ascendant') {
+                // Tri croissant
+                return new Date(dateA) - new Date(dateB);
+            } else if (filtreValue === 'descendant') {
+                // Tri décroissant
+                return new Date(dateB) - new Date(dateA);
             }
+        });
+
+        gridItemsArray.forEach(function(item) {
+            const categorie = item.getAttribute('data-categorie');
+            const format = item.getAttribute('data-format');
+            const annee = item.getAttribute('data-annee');
+
+            const categorieMatch = categorieValue === 'all' || categorie === categorieValue;
+            const formatMatch = formatValue === 'all' || format === formatValue;
+
+            if (categorieMatch && formatMatch && count < 8) { // Vérifiez si le compteur est inférieur à 8
+                item.style.display = 'block';
+                count++; // Incrémente le compteur
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Mettre à jour l'ordre des éléments dans le DOM
+        const grid = document.querySelector('.grid');
+        gridItemsArray.forEach(function(item) {
+            grid.appendChild(item);
         });
     }
-        // Fonction pour trier les éléments de la grille en fonction de la date
-        function sortGridItems(order) {
-            const grid = document.querySelector('.grid');
-            const items = Array.from(grid.children);
+});
 
-            items.sort(function(a, b) {
-                const dateA = new Date(a.querySelector('.photo-clickable').getAttribute('data-annee'));
-                const dateB = new Date(b.querySelector('.photo-clickable').getAttribute('data-annee'));
-
-                if (order === 'ascendant') {
-                    return dateA - dateB;
-                } else {
-                    return dateB - dateA;
-                }
-            });
-
-            // Vider la grille et réinsérer les éléments triés
-            while (grid.firstChild) {
-                grid.removeChild(grid.firstChild);
-            }
-
-            items.forEach(function(item) {
-                grid.appendChild(item);
-            });
-        }
-
-        // Fonction pour charger plus de photos
-        function loadMorePhotos() {
-            const visibleItems = document.querySelectorAll('.grid-item:not([style*="display: none"])');
-            const hiddenItems = document.querySelectorAll('.grid-item[style*="display: none"]');
-            let count = 0;
-
-            // Afficher jusqu'à 8 éléments cachés
-            hiddenItems.forEach(function(item) {
-                if (count < 8 && visibleItems.length + count < 16) {
-                    item.style.display = 'block';
-                    count++;
-                }
-            });
-
-            // Masquer le bouton si tous les éléments sont affichés
-            if (visibleItems.length + count >= 16) {
-                loadMoreButton.textContent = 'Plus de photos';
-                loadMoreButton.disabled = true;
-            }
-            console.log(document.querySelector('.filter-category'));
-
-        }
     </script>
 </body>
+
 </html>
