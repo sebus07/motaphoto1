@@ -6,13 +6,15 @@
 
 .grid {
     margin-top: 40px;
-    max-width: 1440px;
+    max-width: 1240px;
     width: 100%;
     min-height: 250px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     gap: 20px;
+    align-items: center;
+    margin-right: 0px;
 }
 
 .grid-item {
@@ -84,4 +86,7 @@
         align-items: center;
     }
 
+}
+.flex-centre{
+height: 120px;
 }

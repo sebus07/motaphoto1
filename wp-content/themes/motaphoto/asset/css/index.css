@@ -159,6 +159,9 @@ section {
         flex-direction: column;
         align-items: center;
     }
+    .dropbtn {
+        margin-right: 5px; 
+    } 
 
     }
 
@@ -182,6 +185,9 @@ section {
             width: 1190px;
             margin: 0 auto;
         }
+        .dropbtn {
+            margin-right: 5px; */
+        } 
 
     }
 
@@ -287,7 +293,17 @@ section {
         .chargerplus{
             width: 100vw;
         }
+        .filtres {
+            display: flex;
+            flex-direction: column; /* Aligner les éléments en colonne */
+            align-items: center; /* Centrer horizontalement */
+            justify-content: center; /* Centrer verticalement */
+        }
+        .dropbtn {
+            margin-right: 0px; */
+        }    
 
+       
       }
 
 
@@ -366,29 +382,15 @@ section {
     font-family: 'Poppins', sans-serif;
 }
 
-.mignature{
-display: flex;
-display: flex;
-flex-direction: column;
-align-items: flex-end;
-width: 40vw;
-}
-
-.mignature img{
-    margin-top: 10px;
-    height:81px;
-    width: 89px;
-    background-size: cover; /* Affichage en cover */
-    
-}
 
 .fleche{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 .fleche_2{
     display: flex;
+    align-items: center;
     margin-left: 100px;
 }
 .fleche img{
@@ -444,8 +446,6 @@ margin-top: 50px;
     min-height: 540px ;
     margin-bottom: 80px;
 }
-
-
 
 
 
@@ -547,3 +547,18 @@ height: 30px;
     display: flex;
     justify-content: space-around;    
 }
+
+
+/* bouton categorie//////////////////////////////////////////////*/
+
+
+
+.marge{
+    width: 400px;
+}
+
+.formlight{
+    display: flex;
+}
+
+

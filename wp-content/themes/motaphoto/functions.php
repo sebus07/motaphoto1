@@ -12,19 +12,20 @@ function motaphoto1_enqueue_assets()
     wp_enqueue_style('detailPhoto-style', get_template_directory_uri() . '/asset/css/detailPhoto.css');
     wp_enqueue_style('menu_mobile-style', get_template_directory_uri() . '/asset/css/menu_mobile.css');
 
-
     // Enqueue scripts
     wp_enqueue_script('jquery');
     wp_enqueue_script('mon_script_js', get_stylesheet_directory_uri() . '/asset/js/mon_script.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('lightbox_js', get_stylesheet_directory_uri() . '/asset/js/lightbox.js', array('jquery'), '1.0', true);
 
     // Localize script with AJAX URL
-    wp_add_inline_script( 'mon_script_js', 'var ajaxurl = ' . wp_json_encode( admin_url('admin-ajax.php') ) . ';' );}
+    wp_add_inline_script('mon_script_js', 'var ajaxurl = ' . wp_json_encode(admin_url('admin-ajax.php')) . ';');
+}
 
 add_action('wp_enqueue_scripts', 'motaphoto1_enqueue_assets');
 
 
 
-////////////////////////////création du fichier photo dans le backoffice/////////////////////////////////
+// Création du custom post type "FichierPhoto"
 function motaphoto1_register_custom_post_types()
 {
     $labels_FichierPhoto = array(
@@ -74,10 +75,48 @@ function motaphoto1_get_theme_settings()
     return $settings;
 }
 
+// Ajout de l'action pour gérer la requête AJAX pour charger les données des photos
+add_action('wp_ajax_load_photos_data', 'load_photos_data_callback');
 
 
+function load_photos_data_callback() {
+    $args = array(
+        'post_type' => 'cif_FichierPhotos',
+        'posts_per_page' => -1,
+    );
 
+    $query = new WP_Query($args);
 
+    if ($query->have_posts()) {
+        $photos_data = array();
 
+        while ($query->have_posts()) {
+            $query->the_post();
+            $photo_id = get_the_ID();
+            $photo_title = get_the_title();
+            $photo_url = get_the_post_thumbnail_url($photo_id, 'full'); // Utilisez la taille normale
+            $photo_reference = get_post_meta($photo_id, 'reference', true);
+            $photo_categorie = get_post_meta($photo_id, 'categorie', true);
+
+            // Ajoutez les données de chaque photo dans un tableau
+            $photos_data[] = array(
+                'id' => $photo_id,
+                'title' => $photo_title,
+                'url' => $photo_url,
+                'reference' => $photo_reference,
+                'categorie' => $photo_categorie,
+            );
+        }
+
+        // Réinitialisez les données de la requête post
+        wp_reset_postdata();
+
+        // Encodez les données au format JSON et envoyez-les
+        wp_send_json($photos_data);
+    } else {
+        // Si aucune photo n'est trouvée, envoyez un tableau vide
+        wp_send_json(array());
+    }
+}
 
 

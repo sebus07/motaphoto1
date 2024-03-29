@@ -23,7 +23,7 @@ if (have_posts()) :
         $reference = get_field('reference');
         $type = get_field('type');
         
-        // Afficher les détails de la photo à gauche et la photo à droite
+        // Afficher les détails de la photo à gauche
         echo '<div class="photo-details-container">';
         echo '<div id="motafont"class="photo-details motaphoto-font">';
         echo '<h2 class="marge">' . get_the_title() . '</h2>';
@@ -34,10 +34,10 @@ if (have_posts()) :
         echo '<p class="margel">Année : ' . $annee . '</p>';
         echo '</div>';
 
-        // Afficher l'image à droite
+        // Afficher l'image à droite avec le lien vers la lightbox
         if ($image) {
             echo '<div class="photo-image survol-photo">';
-            echo '<a class="lightbox-trigger" href="#lightbox-container">'; // Ajout de la classe "lightbox-trigger" et de l'attribut href vers l'ID de la lightbox
+            echo '<a class="photo-link" href="#" onclick="openLightbox(\'' . $image['url'] . '\', \'' . get_the_title() . '\', \'' . $categorie . '\', \'' . $reference . '\')">';
             echo '<img src="' . $image['url'] . '" alt="' . get_the_title() .'" alt="' . get_the_title() . '" data-reference="' . $reference . '" data-categorie="' . $categorie . '">';
             echo '</a>';
             echo '</div>';
@@ -64,14 +64,17 @@ endif;
             // Inclure le contenu de lightbox.php
             get_template_part('lightbox');
             ?>
-            <div class="fleche_2">
-                <div><img id="previousPhoto2" src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/Line6.png" alt=""></div>
-                <div><img id="nextPhoto2" src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/Line7.png" alt=""></div>
-            </div>    
         </div>
+        
     </div>
 </div>
+<style>
+    img.photo-clickable{
+width: 81px;
+height: 71px;
+}
 
+</style>
 <?php
 
 
