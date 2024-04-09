@@ -11,13 +11,15 @@ function motaphoto1_enqueue_assets()
     wp_enqueue_style('photo-style', get_template_directory_uri() . '/asset/css/photo.css');
     wp_enqueue_style('detailPhoto-style', get_template_directory_uri() . '/asset/css/detailPhoto.css');
     wp_enqueue_style('menu_mobile-style', get_template_directory_uri() . '/asset/css/menu_mobile.css');
+    wp_enqueue_style('lightbox-style', get_template_directory_uri() . '/asset/css/lightbox.css');
 
     // Enqueue scripts
     wp_enqueue_script('jquery');
     wp_enqueue_script('mon_script_js', get_stylesheet_directory_uri() . '/asset/js/mon_script.js', array('jquery'), '1.0', true);
     wp_enqueue_script('lightbox_js', get_stylesheet_directory_uri() . '/asset/js/lightbox.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('filtre_chargerPlus.js', get_stylesheet_directory_uri() . '/asset/js/filtre_chargerPlus.js', array('jquery'), '1.0', true);
 
-    // Localize script with AJAX URL
+    // Localize script with AJAX URL 
     wp_add_inline_script('mon_script_js', 'var ajaxurl = ' . wp_json_encode(admin_url('admin-ajax.php')) . ';');
 }
 

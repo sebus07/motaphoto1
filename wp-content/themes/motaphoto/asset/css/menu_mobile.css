@@ -1,4 +1,7 @@
 /* Styles pour le menu burger */
+
+
+
 .menu-toggle {
     display: none; /* Masque le bouton burger par défaut */
     cursor: pointer; /* Ajoute un curseur pointer pour indiquer qu'il est cliquable */
@@ -12,7 +15,7 @@
     top: 100%;
     left: 0;
     width: 100%;
-    min-height: 1200px;
+    min-height: 100%;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
@@ -51,14 +54,28 @@
 
 
 
-
-
-
-
-
-
 /* Masquer le menu principal sur mobile */
 @media screen and (max-width: 768px) {
+    
+    .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    .fleche2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
     .main-navigation {
         display: none;
     }
@@ -74,6 +91,9 @@
     }
     .site-branding a {
         margin-left: 50px;
+    }
+    .site-branding {
+        width: 50vw;
     }
     .container {
         margin-top: 10px;

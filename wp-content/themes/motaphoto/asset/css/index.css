@@ -8,7 +8,7 @@
 }
 
 /* Déclaration de la police Poppins */
-/*@font-face {
+@font-face {
     font-family: 'Poppins';
     src: url('<?php echo get_template_directory_uri(); ?>/asset/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
     font-weight: 500;
@@ -26,11 +26,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
-
-
 #masthead {
-
     background: linear-gradient(to bottom, #FFFFFF, #f2f2f2); /* Dégradé de blanc à gris clair */
     box-shadow: 0px 4px 14px 10px rgba(0,0,0,0.03); /* Ombre avec les paramètres spécifiés */
     Height: 80px;
@@ -41,7 +37,6 @@
     margin-top: 10px;
     display: block;
 }
-
 
 .hero {
     display: flex;
@@ -58,7 +53,7 @@
 }
 
 
-/* pour le bonton filtre */
+/* pour les bouton filtre ///////////////////////////////////////////////////*/
 
 .dropdown {
     position: relative;
@@ -103,6 +98,7 @@
     border-radius:8px ;
     margin-right: 25px;
     text-align: left;
+    margin-left: 10px;
 }
 .dropbtn2{
     width: 260px;
@@ -121,12 +117,13 @@
     justify-content: flex-end;
 }
 
-section {
+.blocCategories {
     display: flex;
     max-width: 1190px;
     justify-content: center;
     margin: 0 auto; 
 }
+
 
 .chargerplus{
     display: flex;
@@ -137,178 +134,13 @@ section {
     width: 100vw;
 }
 
+
 .dropbtn3{
     width: 260px;
     height: 43px;
     margin-bottom: 30px;
-    margin-top: 30px;
     }
 
-
-@media screen and (min-width: 1050px) and (max-width: 1190px){
-   
-    .filtres2 {
-        display: flex;
-        width: 33vw ;
-        width: 50vw;
-        justify-content: center;
-    }
-    .filtres{
-        display: flex;
-        width: 50vw;
-        flex-direction: column;
-        align-items: center;
-    }
-    .dropbtn {
-        margin-right: 5px; 
-    } 
-
-    }
-
-    @media screen and (min-width: 500px) and (max-width: 1050px){
-
-        .filtres2 {
-            display: flex;
-            width: 33vw ;
-            justify-content: flex-start;
-            width: 50vw;
-            justify-content: center;
-        }
-        .filtres{
-            display: flex;
-            width: 50vw;
-            flex-direction: column;
-            align-items: center;
-        }
-        .section{
-            display: flex;
-            width: 1190px;
-            margin: 0 auto;
-        }
-        .dropbtn {
-            margin-right: 5px; */
-        } 
-
-    }
-
-    @media only screen and (max-width: 768px) {
-        .photo-details-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: flex-end;
-            padding-top: 50px;
-            flex-direction: column-reverse;
-        }
-        .mignature img{
-            display: none;
-        }
-        .contact_photo {
-            display: flex;
-            justify-content: space-evenly;
-            width: 1200px;
-            align-content: space-between;
-            flex-direction: column !important;
-            flex-wrap: nowrap;
-            align-items: center;
-            border-bottom: 1px solid black;
-        }
-        section {
-            display: flex;
-            max-width: 1190px;
-            margin: 0 auto; 
-            margin: 0 auto;
-            flex-direction: column;
-            justify-content: center;
-            align-items: stretch;
-        }
-        .filtres {
-        display: flex;
-        width: 100vw;
-        flex-direction: column;
-        align-items: center;
-        }
-        .filtres2 {
-            display: flex;
-            width: 100vw !important;
-            justify-content: center;
-            align-items: center;
-        }
-        .filtres2 .dropdown{
-            margin-right: 25px;
-        }
-
-
-        .centre7{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .photo-image img {
-            width: 265px !important;
-            height: auto;
-            top: 92px;
-            left: 56px;
-        }
-        .lightbox-trigger img{
-            width: 265px !important;
-            height: auto;
-            top: 92px;
-            left: 56px;
-        }
-        .photo-image{
-            display: flex;
-        }
-        .photo-details-container{
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center !important;
-            padding-top: 50px;
-            margin-bottom: 25px;
-        }
-        .motaphoto-font{
-            width: 265px;
-
-        }
-        #motafont{
-            display: flex;
-            width: 265px;
-            flex-direction: column;
-        }
-        .photo-details-container{
-            border-bottom: 1px solid black;
-        }
-        .photo-details {
-            border-bottom: 0px solid black !important; 
-        }
-        .margel{
-            margin-bottom: 40px;
-        }
-        .fleche,
-        .fleche img{
-            display: none;
-        }
-        .chargerplus{
-            width: 100vw;
-        }
-        .filtres {
-            display: flex;
-            flex-direction: column; /* Aligner les éléments en colonne */
-            align-items: center; /* Centrer horizontalement */
-            justify-content: center; /* Centrer verticalement */
-        }
-        .dropbtn {
-            margin-right: 0px; */
-        }    
-
-       
-      }
-
-
-
-    /*partie photo nouvelle page//////////////////////////////////////////////////
    /* CSS pour la div contenant les détails de la photo et l'image */
 .photo-details-container {
     max-width: 1200px; /* Largeur maximum */
@@ -318,7 +150,7 @@ section {
     padding-top: 50px;
 }
 
-/* CSS pour les détails de la photo à gauche */
+/* CSS pour les détails de la photo à gauche ///////////////////////////////////////*/
 .photo-details {
     flex: 1; 
     box-sizing: border-box; 
@@ -326,25 +158,24 @@ section {
     Width: 564px;
 }
 
-/* CSS pour l'image à droite */
+/* CSS pour l'image à droite ////////////////////////////////////////////*/
 .photo-image {
     flex: 1; 
 }
 
 .photo-image img {
-    max-width: 100%; /* Image occupera 100% de la largeur disponible */
-    height: auto; /* Hauteur ajustée automatiquement */
-    display: block; /* Pour supprimer les marges par défaut */
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
 }
 .photo-details h2{
     font-weight: 400;
-    font-style: italic;
     font-size: 66px;
     line-height: 58px; 
     margin-bottom: 0;
-    width: 200px;
     text-transform: uppercase;
-    font-style: italic;
+    font-style: italic !important;
+    font-family: 'SpaceMono';
 }
     .photo-details p{
     font-weight: 400;
@@ -448,72 +279,42 @@ margin-top: 50px;
 }
 
 
+/* Styles pour la galerie de miniatures ///////////////////////////////////////////////////////////*/
 
-/* Styles pour la lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 999;
-    text-align: center;
-    overflow-y: auto;
-}
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    margin-top: 50px;
-}
-
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-}
-
-/* Styles pour la galerie de miniatures */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
 
 .thumbnail-container {
-    margin: 10px;
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 0;
 }
-
-.thumbnail {
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-}
-
 .gallery{
-   
     justify-content: flex-end;
     margin-left: 100px;
 }
 .gallery-photo{
     justify-content: space-between;
 }
-
+#thumbnail-image{
+width: 81px;
+height: 71px;
+object-fit: cover; 
+overflow: hidden;
+}
 #previousPhoto{
 height: 30px;
 }
-
 #nextPhoto{
 height: 30px;
 }
+.visible img.photo-clickable {
+    width: 1px;
+    height: 1px;
+}
 
-/* Styles pour les flèches de navigation */
+
+/* Styles pour les flèches de navigation ///////////////////////////////////////////////////*/
 .fleche2 {
     position: absolute;
     top: 50%; /* Placer la div au milieu de la hauteur de son conteneur */
@@ -532,33 +333,241 @@ height: 30px;
     margin: 0 50px; /* Ajoute une marge de 50px à gauche et à droite */
 }
 
-/* Style pour la fermeture de la lightbox */
-.close-btn {
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.image-details{
-    color: #f2f2f2;
-    display: flex;
-    justify-content: space-around;    
-}
-
-
 /* bouton categorie//////////////////////////////////////////////*/
-
-
+.category-option{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 3%;
+    color: #313144;
+}
 
 .marge{
-    width: 400px;
+    font-family:'SpaceMono';
 }
 
 .formlight{
     display: flex;
 }
+/* miniature avec fleche*/
+.lightbox-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.caroussel{
+    display: flex;
+}
+
+.previous-arrow{
+    margin-right: 50px;
+}
 
 
+@media screen and (min-width: 1050px) and (max-width: 1190px){
+   
+    .filtres2 {/* filtre recherche/////////////////////////////////////*/
+        display: flex;
+        width: 33vw ;
+        width: 50vw;
+        justify-content: center;
+    }
+    .filtres{
+        display: flex;
+        width: 50vw;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dropbtn {
+        margin-right: 5px; 
+    } 
+    .filtres{
+        display: flex;
+        flex-direction: row;
+    }
+    .filtres2{
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .blocCategories {
+        display: flex;
+        max-width: 1190px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .blocAnne{
+        display: flex;
+        width: 300px;
+    }/* fin/////////////////////////////////////*/
+
+    }
+
+    @media screen and (min-width: 769px) and (max-width: 1050px){
+
+        .filtres2 {/* filtre recherche/////////////////////////////////////*/
+            display: flex;
+            width: 33vw ;
+            justify-content: flex-start;
+            justify-content: center;
+        }
+        .filtres{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .dropbtn {
+            margin-right: 5px;
+        } 
+        .blocCategories {
+            display: flex;
+            max-width: 1190px;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .blocAnne{
+            display: flex;
+            width: 300px;
+            flex-direction: row;
+            justify-content: flex-end;
+        }/* fin/////////////////////////////////////*/
+
+    }
+
+    @media only screen and (max-width: 768px) {
+        .photo-details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-end;
+            padding-top: 50px;
+            flex-direction: column-reverse;
+        }
+        .mignature img{
+            display: none;
+        }
+        .contact_photo {
+            display: flex;
+            justify-content: space-evenly;
+            max-width: 1200px;
+            height: 118px;
+            align-content: space-between;
+            flex-direction: column !important;
+            flex-wrap: nowrap;
+            align-items: center;
+            border-bottom: 1px solid black;
+        }
+        section {/* filtre recherche/////////////////////////////////////*/
+            display: flex;
+            max-width: 1190px;
+            margin: 0 auto; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .filtres {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        }
+        .filtres2 {
+            display: flex;
+            width: 100vw !important;
+            justify-content: center;
+            align-items: center;
+        }
+        .filtres2 .dropdown{
+            margin-right: 25px;
+        }/* fin/////////////////////////////////////*/
+
+
+        .centre7{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo-image img {
+            width: 265px !important;
+            height: auto;
+            top: 92px;
+            left: 56px;
+        }
+        .lightbox-trigger img{
+            width: 265px !important;
+            height: auto;
+            top: 92px;
+            left: 56px;
+        }
+        .photo-image{
+            display: flex;
+        }
+        .photo-details-container{
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center !important;
+            padding-top: 50px;
+            margin-bottom: 25px;
+        }
+        .motaphoto-font{
+            width: 265px;
+
+        }
+        #motafont{
+            display: flex;
+            width: 265px;
+            flex-direction: column;
+        }
+        .photo-details-container{
+            border-bottom: 1px solid black;
+        }
+        .photo-details {
+            border-bottom: 0px solid black !important; 
+        }
+        .margel{
+            margin-bottom: 40px;
+        }
+        .fleche,
+        .fleche img{
+            display: none;
+        }
+        .chargerplus{
+            width: 100vw;
+        }
+        .filtres {
+            display: flex;
+            flex-direction: column; /* Aligner les éléments en colonne */
+            align-items: center; /* Centrer horizontalement */
+            justify-content: center; /* Centrer verticalement */
+        }
+        .dropbtn {
+            margin-right: 10px !important;
+        }    
+        .visible img.photo-clickable {
+            width: 1px !important;
+            height: 1px !important;
+        }
+        
+        .thumbnail-image,
+        .caroussel,
+        .arrow 
+        {
+            display:none;
+        }
+        .dropbtn4{
+            margin-top: 0px;
+        }
+
+        .blocCategories {
+            display: flex;
+            max-width: 1190px;
+            margin: 0 auto;
+            flex-direction: column;
+            align-items: center;
+        }
+
+      }

@@ -20,8 +20,6 @@ get_template_part( 'modal-contact' );
 
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
-
 </body>
 
 </html>

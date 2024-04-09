@@ -52,7 +52,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
-
-
-
-///////////////////miniature/////////////////////////////////

@@ -40,6 +40,7 @@ define( 'DB_CHARSET', 'utf8mb4' );
   */
 define('DB_COLLATE', '');
 
+
 /**#@+
  * Clés uniques d’authentification et salage.
  *
@@ -84,7 +85,7 @@ $table_prefix = 'wp_';
  *
  * @link https://fr.wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', false );
 define( 'WP_DEBUG_DISPLAY', false );
 
