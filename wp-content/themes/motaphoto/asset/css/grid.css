@@ -101,6 +101,10 @@
         align-items: center;
     }
 
+    .survol-photo:hover::after {
+        content: attr(data-categorie) "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0" attr(data-reference); /* Affiche la catégorie et la référence */
+    }
+
 }
 .flex-centre{
 height: 120px;
