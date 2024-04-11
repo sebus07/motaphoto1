@@ -35,8 +35,8 @@ if (have_posts()) :
 
         // Afficher l'image à droite avec le lien vers la lightbox
         if ($image) {
-            echo '<div class="photo-image survol-photo">';
-            echo '<a class="photo-link" href="#" onclick="openLightbox(\'' . $image['url'] . '\', \'' . get_the_title() . '\', \'' . $categorie . '\', \'' . $reference . '\')">';
+            echo '<div class="photo-image survol-photo ">';
+            echo '<a class="photo-link " href="#" onclick="openLightbox(\'' . $image['url'] . '\', \'' . get_the_title() . '\', \'' . $categorie . '\', \'' . $reference . '\')">';
             echo '<img src="' . $image['url'] . '" alt="' . get_the_title() . '" data-reference="' . $reference . '" data-categorie="' . $categorie . '">';
             echo '</a>';
             echo '</div>';

@@ -39,11 +39,7 @@
     display: none;
 }
 
-.survol-photo:hover {
-    filter: brightness(50%);
-    transition: 0.5s;
-    cursor: pointer;
-}
+
 
 .survol-photo:hover::before {
     content: "";
@@ -61,6 +57,25 @@
 }
 .survol-photo {
     position: relative;
+}
+
+.survol-photo:hover {
+    filter: brightness(60%);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.survol-photo:hover::after {
+    content: attr(data-categorie) "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0" attr(data-reference); /* Affiche la catégorie et la référence */
+    position: absolute;
+    left: 10px; /* Ajustez la position à gauche */
+    bottom: 10px !important; /* Ajustez la position en bas */
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 10px;
+    font-size: 16px;
+    z-index: 1000;
 }
 
 /* Media query pour les appareils de largeur maximale de 768px */

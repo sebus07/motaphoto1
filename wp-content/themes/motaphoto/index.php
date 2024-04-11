@@ -3,7 +3,7 @@ $annee = get_field('annee');
 $categorie = get_field('categorie');
 $format = get_field('format');
 $image = get_field('image');
-$Référence = get_field('reference');
+$reference = get_field('reference');
 $type = get_field('type');
 
 get_header();
@@ -107,23 +107,25 @@ get_header();
                     $format = get_field('format');
                     $annee = get_field('annee');
                     $image = get_field('image');
+                    $reference = get_field('reference');
 
                     // Vérifier si le compteur est inférieur à 8
                     if ($count < 8) {
                         // Si oui, afficher la photo normalement
-                        echo '<div class="grid-item survol-photo" data-categorie="' . $categorie . '" data-format="' . $format . '" data-annee="' . $annee . '">';
+                        echo '<div class="grid-item survol-photo" data-categorie="' . $categorie .'" data-reference="' . $reference . '" data-format="' . $format . '" data-annee="' . $annee . '">';
                         echo '<a href="' . esc_url(get_permalink()) . '" class="photo-link">';
                         echo '<img class="photo-clickable" src="' . $image['url'] . '" alt="' . get_the_title() . '">';
                         echo '</a>';
                         echo '</div>';
-
+                    
                         $count++; // Incrémenter le compteur de photos affichées
                     } else {
                         // Sinon, cacher la photo et la stocker dans le tableau des photos cachées
-                        $hidden_photos[] = '<div class="grid-item survol-photo hidden" data-categorie="' . $categorie . '" data-format="' . $format . '" data-annee="' . $annee . '">'
+                        $hidden_photos[] = '<div class="grid-item survol-photo hidden" data-categorie="' . $categorie . '" data-reference="' . $reference .'" data-format="' . $format . '" data-annee="' . $annee . '">'
                             . '<a href="' . esc_url(get_permalink()) . '" class="photo-link">'
                             . '<img class="photo-clickable" src="' . $image['url'] . '" alt="' . get_the_title() . '">'
                             . '</a>'
+
                             . '</div>';
                     }
                 }

@@ -83,9 +83,12 @@
     border-radius: 0px 0px 8px 8px;
 }
 
-.dropdown-content a:hover {
-    background-color: #E00000;
+
+.category-option:hover {
+    background-color:  #E00000 !important; 
 }
+
+
         
 .dropdown:hover .dropdown-content {
     display: block;

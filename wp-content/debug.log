@@ -1,0 +1,2 @@
+[10-Apr-2024 07:56:42 UTC] PHP Deprecated:  addcslashes(): Passing null to parameter #1 ($string) of type string is deprecated in C:\MAMP\htdocs\motaphoto\wp-includes\class-wpdb.php on line 1785
+[10-Apr-2024 07:56:55 UTC] PHP Deprecated:  addcslashes(): Passing null to parameter #1 ($string) of type string is deprecated in C:\MAMP\htdocs\motaphoto\wp-includes\class-wpdb.php on line 1785

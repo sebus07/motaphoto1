@@ -31,7 +31,7 @@ if ($first_image) {
 </div>
 
 <!-- La lightbox -->
-<div class="lightbox" id="lightbox">
+<div class="lightbox " id="lightbox">
     <span onclick="closeLightbox()" style="position: fixed; top: 20px; right: 20px; cursor: pointer; color: #fff; font-size: 24px;">&times;</span>
     <div class="fleche2">
         <a href="#" onclick="prevImage()"><img id="previousPhoto" src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/previousPhoto.png" alt="Previous Photo"></a>
