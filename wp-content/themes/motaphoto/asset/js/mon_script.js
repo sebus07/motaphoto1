@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
             modalContact.style.display = 'none';
         });
     }
-
     // Sélectionner le bouton "Contact"
     let contactButton = document.querySelector('.dropbtn4');
 
@@ -44,11 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.style.display = 'none';
     });
 
-    // Fermer la modal lorsqu'on clique en dehors de la modal
-    window.addEventListener('click', function (event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    });
 
 });
+

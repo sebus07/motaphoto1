@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let photos = document.querySelectorAll('.photo-image img');
     let currentIndex = 0;
 
-    // Ajoutez ces lignes pour définir la première image
+    // Définir la première image
     if (photos.length > 0) {
         document.getElementById('thumbnail-image').src = photos[0].src;
     }

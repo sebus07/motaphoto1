@@ -1,9 +1,11 @@
-
+body{
+    margin: 0;
+}
 /* Déclaration de la police Space Mono */
 @font-face {
     font-family: 'SpaceMono';
     src: url('<?php echo get_template_directory_uri(); ?>/asset/fonts/SpaceMono/SpaceMono-Regular.ttf') format('truetype');
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -130,11 +132,10 @@
 
 .chargerplus{
     display: flex;
-    align-content: flex-end;
+    align-content: center;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    width: 100vw;
 }
 
 
@@ -178,13 +179,13 @@
     margin-bottom: 0;
     text-transform: uppercase;
     font-style: italic !important;
-    font-family: 'SpaceMono';
+    font-family: 'SpaceMono', monospace;
+    text-align: left;
 }
     .photo-details p{
     font-weight: 400;
     font-size: 14px;
     line-height: 20.73px;
-    letter-spacing: 10%;
     text-transform: uppercase;
 }
 .flex-centre{
@@ -207,6 +208,7 @@
     flex-wrap: nowrap;
     align-items: center;
     border-bottom: 1px solid black;
+
 }
 .texte p{
     font-weight: 400;
@@ -272,7 +274,6 @@ font-family: 'Space Mono', monospace;
 font-weight: 400;
 font-size: 18px;
 line-height: 26.66px;
-letter-spacing: 10%;
 margin-top: 50px;
 }
 
@@ -287,7 +288,6 @@ margin-top: 50px;
 
 .thumbnail-container {
     display: flex;
-    width: 500px;
     flex-direction: column;
     align-items: flex-end;
     margin-right: 0;
@@ -304,6 +304,7 @@ width: 81px;
 height: 71px;
 object-fit: cover; 
 overflow: hidden;
+margin-left: 590px;
 }
 #previousPhoto{
 height: 30px;
@@ -342,7 +343,6 @@ height: 30px;
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
-    letter-spacing: 3%;
     color: #313144;
 }
 
@@ -366,6 +366,7 @@ height: 30px;
 .previous-arrow{
     margin-right: 50px;
 }
+
 
 
 @media screen and (min-width: 1050px) and (max-width: 1190px){
@@ -404,7 +405,13 @@ height: 30px;
         display: flex;
         width: 300px;
     }/* fin/////////////////////////////////////*/
-
+    .contact_photo {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    #thumbnail-image{
+        margin-left: 500px;
+        }
     }
 
     @media screen and (min-width: 769px) and (max-width: 1050px){
@@ -436,6 +443,13 @@ height: 30px;
             flex-direction: row;
             justify-content: flex-end;
         }/* fin/////////////////////////////////////*/
+        body{
+            margin-left: 15px;
+            margin-right:15px;
+        }
+        #thumbnail-image{
+            margin-left: 250px;
+            }
 
     }
 
@@ -454,13 +468,14 @@ height: 30px;
         .contact_photo {
             display: flex;
             justify-content: space-evenly;
-            max-width: 1200px;
+            width: 690px;
             height: 118px;
             align-content: space-between;
             flex-direction: column !important;
             flex-wrap: nowrap;
             align-items: center;
             border-bottom: 1px solid black;
+
         }
         section {/* filtre recherche/////////////////////////////////////*/
             display: flex;

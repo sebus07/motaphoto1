@@ -89,7 +89,7 @@ get_header();
         <div class="grid">
             <?php
             $args = array(
-                'post_type' => 'cif_FichierPhotos', // Votre type de post personnalisé
+                'post_type' => 'cif_FichierPhotos', //cp custom post
                 'posts_per_page' => -1, // -1 pour afficher tous les posts
             );
 
@@ -140,6 +140,7 @@ get_header();
             foreach ($hidden_photos as $hidden_photo) {
                 echo $hidden_photo;
             }
+            
             ?>
         </div>
     </div>

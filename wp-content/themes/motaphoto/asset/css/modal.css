@@ -7,7 +7,7 @@
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 597px;
-    height: 769;
+    height: 769px;
     border: 5px solid black;
 }    
 
@@ -24,6 +24,7 @@ div.modal-content{
     width: 263px;
     height: 40px;
     border-radius: 8px;
+    font-weight: 800;
 }
 
 #wpforms-102-field_4{
@@ -115,7 +116,7 @@ wpforms-form-102{
         width: 190px;
         height:149px;
         border-radius: 8px;
-        border-color: 1px solid black;
+        border: 1px solid black;
         
     }
 

@@ -34,7 +34,6 @@ wp_enqueue_script('jquery');
     <header id="masthead" class="site-header" role="banner">
         <div class="container">
             <div class="site-branding">
-                <!-- Insérez le lien de votre logo ci-dessous -->
                 <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/Logo.webp" alt="Logo du site">
                 </a>
@@ -53,7 +52,7 @@ wp_enqueue_script('jquery');
                     'menu_id' => 'primary-menu',
                 ));
                 ?>
-            </nav><!-- #site-navigation -->
+            </nav>
 
             <!-- Menu déroulant mobile -->
             <div class="mobile-menu" id="mobile-menu">
@@ -64,8 +63,8 @@ wp_enqueue_script('jquery');
                 ));
                 ?>
             </div>
-        </div><!-- .container -->
-    </header><!-- #masthead -->
+        </div>
+    </header>
 
     <?php wp_footer(); ?>
     <script>

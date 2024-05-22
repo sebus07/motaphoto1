@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const categorieSelect = document.getElementById('categorie-select');
     const formatSelect = document.getElementById('format-select');
@@ -54,13 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Ajoutez un gestionnaire d'événements pour le changement de sélection de catégorie
+    // Gestionnaire d'événements pour le changement de sélection de catégorie
     categorieSelect.addEventListener('change', filterGridItems);
 
-    // Ajoutez un gestionnaire d'événements pour le changement de sélection de format
+    // Gestionnaire d'événements pour le changement de sélection de format
     formatSelect.addEventListener('change', filterGridItems);
 
-    // Ajoutez un gestionnaire d'événements pour le changement de sélection de filtre
+    // Gestionnaire d'événements pour le changement de sélection de filtre
     filtreSelect.addEventListener('change', filterGridItems);
 
     // Fonction pour filtrer les photos
