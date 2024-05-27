@@ -12,7 +12,7 @@ get_header();
 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
     <div class="hero">
         <a href="#">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/header.webp" alt="Description de l'image">
@@ -89,7 +89,7 @@ get_header();
         <div class="grid">
             <?php
             $args = array(
-                'post_type' => 'cif_FichierPhotos', //cp custom post
+                'post_type' => 'cif_FichierPhotos', //post personnalisé
                 'posts_per_page' => -1, // -1 pour afficher tous les posts
             );
 
@@ -140,7 +140,6 @@ get_header();
             foreach ($hidden_photos as $hidden_photo) {
                 echo $hidden_photo;
             }
-            
             ?>
         </div>
     </div>

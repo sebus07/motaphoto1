@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let photos = document.querySelectorAll('.photo-image img');
     let currentIndex = 0;
 
-    // Définir la première image
+    // Ajoutez ces lignes pour définir la première image
     if (photos.length > 0) {
         document.getElementById('thumbnail-image').src = photos[0].src;
     }
@@ -30,25 +30,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    closeBtnLightbox.addEventListener('click', function () {
-        lightbox.style.display = 'none';
-    });
-
     // Navigation dans la lightbox
     let previousBtn = document.getElementById('previousPhoto');
     let nextBtn = document.getElementById('nextPhoto');
 
-    previousBtn.addEventListener('click', function () {
-        if (currentIndex > 0) {
-            openLightbox(currentIndex - 1);
-        }
-    });
 
-    nextBtn.addEventListener('click', function () {
-        if (currentIndex < photos.length - 1) {
-            openLightbox(currentIndex + 1);
-        }
-    });
+
+
 
 });
 

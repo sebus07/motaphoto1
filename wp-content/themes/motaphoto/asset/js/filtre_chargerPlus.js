@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const formatSelect = document.getElementById('format-select');
     const filtreSelect = document.getElementById('filtre-select');
     const gridItems = document.querySelectorAll('.grid-item');
+
     const loadMoreButton = document.querySelector('.chargerplus button'); // Déplacer la déclaration du bouton en dehors de la fonction
     let loadedCount = 0; // Compteur pour le nombre de photos déjà chargées
     let totalLoadedCount = 0; // Compteur pour le nombre total de photos chargées
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const categorie = item.getAttribute('data-categorie');
             const format = item.getAttribute('data-format');
             const annee = item.getAttribute('data-annee');
+            const refernce = item.getAttribute('data-reference');
 
             const categorieMatch = categorieValue === 'all' || categorie === categorieValue;
             const formatMatch = formatValue === 'all' || format === formatValue;
