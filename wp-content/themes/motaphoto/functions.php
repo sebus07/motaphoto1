@@ -21,7 +21,7 @@ function motaphoto1_enqueue_assets()
     wp_enqueue_script('ajax-filter.js', get_stylesheet_directory_uri() . '/asset/js/ajax-filter.js', array('jquery'), '1.0', true);
 
 
-    // Localize script with AJAX URL 
+    // Localise script AJAX URL 
     wp_add_inline_script('mon_script_js', 'var ajaxurl = ' . wp_json_encode(admin_url('admin-ajax.php')) . ';');
 }
 
@@ -65,7 +65,7 @@ function motaphoto1_register_custom_post_types()
 add_action('init', 'motaphoto1_register_custom_post_types', 11);
 
 
-
+// Fonction ajax pour recuperation photo
 function my_ajax_filter_search() {
     $args = array(
         'post_type' => 'cif_FichierPhotos',
@@ -103,7 +103,7 @@ function my_ajax_filter_search() {
                 'categorie' => get_field('categorie'),
                 'format' => get_field('format'),
                 'annee' => get_field('annee'),
-                'reference' => get_field('reference') 
+                'reference' => get_field('reference'),
             );
         endwhile;
         wp_send_json_success($results);

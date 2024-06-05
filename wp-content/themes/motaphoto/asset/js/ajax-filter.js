@@ -1,13 +1,12 @@
 jQuery(document).ready(function($) {
-    // Vérifiez si vous êtes sur la page d'accueil
     if ($('body').hasClass('home')) {
         function loadPhotos(offset = 0, append = true) {
             var data = {
                 action: 'my_ajax_filter_search',
-                categorie: $('#categorie-select').val(),
-                format: $('#format-select').val(),
-                annee: $('#filtre-select').val(),
-                order: $('#filtre-select').val() === 'ascendant' ? 'asc' : 'desc',
+                categorie: $('#categorie-dropdown .dropbtn').data('value'),
+                format: $('#format-dropdown .dropbtn').data('value'),
+                annee: $('#filtre-dropdown .dropbtn2').data('value'),
+                order: $('#filtre-dropdown .dropbtn2').data('value') === 'ascendant' ? 'asc' : 'desc',
                 offset: offset
             };
 
@@ -15,8 +14,8 @@ jQuery(document).ready(function($) {
                 if (response.success) {
                     var grid = $('.grid');
                     if (!append) {
-                        grid.empty(); // Vider la grille si on ne l'ajoute pas
-                        totalLoadedCount = 0; // Réinitialiser le compteur total des chargements
+                        grid.empty();
+                        totalLoadedCount = 0;
                     }
 
                     response.data.forEach(function(item) {
@@ -26,10 +25,9 @@ jQuery(document).ready(function($) {
                             + '</a>'
                             + '</div>';
                         grid.append(newItem);
-                        totalLoadedCount++; // Mettre à jour le compteur total des chargements
+                        totalLoadedCount++;
                     });
 
-                    // Afficher ou masquer le bouton "Charger plus" en fonction des résultats
                     if (response.data.length < 8) {
                         $('.dropbtn3').hide();
                     } else {
@@ -41,7 +39,6 @@ jQuery(document).ready(function($) {
             });
         }
 
-        // Chargement initial des photos
         loadPhotos(0, false);
 
         $('.dropbtn3').click(function() {
@@ -49,7 +46,18 @@ jQuery(document).ready(function($) {
             loadPhotos(offset, true);
         });
 
-        $('.home-filter').change(function() {
+        $('.dropdown-content .category-option').click(function() {
+            $('#categorie-dropdown .dropbtn').text($(this).text()).data('value', $(this).data('value'));
+            loadPhotos(0, false);
+        });
+
+        $('.dropdown-content .format-option').click(function() {
+            $('#format-dropdown .dropbtn').text($(this).text()).data('value', $(this).data('value'));
+            loadPhotos(0, false);
+        });
+
+        $('.dropdown-content .filtre-option').click(function() {
+            $('#filtre-dropdown .dropbtn2').text($(this).text()).data('value', $(this).data('value'));
             loadPhotos(0, false);
         });
     }

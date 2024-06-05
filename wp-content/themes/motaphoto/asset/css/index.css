@@ -57,22 +57,38 @@ body{
 
 /* pour les bouton filtre ///////////////////////////////////////////////////*/
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin-top: 20px;
+.home-filter {
+    width: 260px;
+    height: 42px;
+    border-radius: 8px 8px 0 0;
+    border: 1.3px solid #B8BBC2;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    border-width: 1.3px;
+    display: flex;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
-
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    padding-left: 20px;
 }
-        
+/* Lorsque l'on survolez le bouton ou le menu déroulant, le bouton reste en état de survol */
+.home-filter:hover, .dropdown-content:hover ~ .home-filter {
+    border: 1.3px solid #215AFF;
+    border-radius: 8px 8px 0px 0px;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #FFFFFF;
     min-width: 160px;
     z-index: 1;
     border-radius: 0px 0px 8px 8px;
 }    
+
+
         
 .dropdown-content a {
     color: black;
@@ -90,7 +106,49 @@ body{
     background-color:  #E00000 !important; 
 }
 
+.format-option:hover {
+    background-color:  #E00000 !important; 
+}
 
+.filtre-option:hover {
+    background-color:  #E00000 !important; 
+}
+
+.category-option {
+    width: 240px;
+    height: 42px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.03em; /* 3% letter spacing */
+    color: #313144;
+    padding-left: 20px;
+}
+
+.format-option {
+    width: 240px;
+    height: 42px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.03em; /* 3% letter spacing */
+    color: #313144;
+    padding-left: 20px;
+}
+
+.filtre-option {
+    width: 240px;
+    height: 42px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.03em; /* 3% letter spacing */
+    color: #313144;
+    padding-left: 20px;
+}
         
 .dropdown:hover .dropdown-content {
     display: block;
@@ -98,19 +156,22 @@ body{
         
 
 .dropbtn{
-    width: 260px;
+    width: 240px;
     height: 43px;
     border-radius:8px ;
     margin-right: 25px;
     text-align: left;
-    margin-left: 10px;
+    margin-top: 8px;
 }
 .dropbtn2{
-    width: 260px;
+    width: 240px;
     height: 43px;
+    margin-right: 25px;
     border-radius:8px;
     text-align: left;
+    margin-top: 8px;
 }
+
 .filtres{
     display: flex;
     width: 66vw;
@@ -291,6 +352,7 @@ margin-top: 50px;
     flex-direction: column;
     align-items: flex-end;
     margin-right: 0;
+    max-width: 660px;
 }
 .gallery{
     justify-content: flex-end;
@@ -366,7 +428,9 @@ height: 30px;
 .previous-arrow{
     margin-right: 50px;
 }
-
+.texte p{
+    width: 200px;
+}
 
 
 @media screen and (min-width: 1050px) and (max-width: 1190px){
@@ -449,7 +513,20 @@ height: 30px;
         }
         #thumbnail-image{
             margin-left: 250px;
-            }
+        }
+        .contact_photo {
+            max-width: 960px;
+         }
+        .texte{
+            width: 210px;
+        }
+        .thumbnail-container{
+            max-width: 210px; 
+        }
+        .flex-centre{
+            max-width: 966px; 
+  
+        }
 
     }
 
@@ -468,14 +545,13 @@ height: 30px;
         .contact_photo {
             display: flex;
             justify-content: space-evenly;
-            width: 690px;
+            width: 640px;
             height: 118px;
             align-content: space-between;
             flex-direction: column !important;
             flex-wrap: nowrap;
             align-items: center;
             border-bottom: 1px solid black;
-
         }
         section {/* filtre recherche/////////////////////////////////////*/
             display: flex;
@@ -487,7 +563,7 @@ height: 30px;
         }
         .filtres {
         display: flex;
-        width: 100vw;
+        width: 95vw;
         flex-direction: column;
         align-items: center;
         }
@@ -561,6 +637,7 @@ height: 30px;
             flex-direction: column; /* Aligner les éléments en colonne */
             align-items: center; /* Centrer horizontalement */
             justify-content: center; /* Centrer verticalement */
+            width: ;
         }
         .dropbtn {
             margin-right: 10px !important;
@@ -588,4 +665,52 @@ height: 30px;
             align-items: center;
         }
 
+        .dropbtn2{
+            margin-right: 10px;
+        }
+
       }
+
+
+
+
+
+      
+/* fleche filtre*/
+    .dropbtn::after {
+        content: "⌵";
+        float: right;
+        margin-right: 25px;
+        font-size: 1.5em; /* Ajuste la taille selon tes besoins */
+        transition: transform 0.3s;
+    }
+
+    .dropbtn:hover::after {
+        content: "⌵";
+        display: inline-block;
+        transform: rotate(180deg);
+        font-size: 1.5em; /* Ajuste la taille selon tes besoins */
+        transition: transform 0.3s;
+    }
+     
+    .dropbtn2::after {
+        content: "⌵";
+        float: right;
+        margin-right: 25px;
+        font-size: 1.5em; /* Ajuste la taille selon tes besoins */
+        transition: transform 0.3s;
+    }
+
+    .dropbtn2:hover::after {
+        content: "⌵";
+        display: inline-block;
+        transform: rotate(180deg);
+        font-size: 1.5em; /* Ajuste la taille selon tes besoins */
+        transition: transform 0.3s;
+    }
+
+
+
+
+    
+    
