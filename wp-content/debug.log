@@ -1,2 +1,65 @@
 [10-Apr-2024 07:56:42 UTC] PHP Deprecated:  addcslashes(): Passing null to parameter #1 ($string) of type string is deprecated in C:\MAMP\htdocs\motaphoto\wp-includes\class-wpdb.php on line 1785
 [10-Apr-2024 07:56:55 UTC] PHP Deprecated:  addcslashes(): Passing null to parameter #1 ($string) of type string is deprecated in C:\MAMP\htdocs\motaphoto\wp-includes\class-wpdb.php on line 1785
+[05-Jun-2024 15:09:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php:2
+Stack trace:
+#0 C:\MAMP\htdocs\motaphoto\wp-includes\template-loader.php(106): include()
+#1 C:\MAMP\htdocs\motaphoto\wp-blog-header.php(19): require_once('C:\\MAMP\\htdocs\\...')
+#2 C:\MAMP\htdocs\motaphoto\index.php(17): require('C:\\MAMP\\htdocs\\...')
+#3 {main}
+  thrown in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php on line 2
+[05-Jun-2024 15:33:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php:2
+Stack trace:
+#0 C:\MAMP\htdocs\motaphoto\wp-includes\template-loader.php(106): include()
+#1 C:\MAMP\htdocs\motaphoto\wp-blog-header.php(19): require_once('C:\\MAMP\\htdocs\\...')
+#2 C:\MAMP\htdocs\motaphoto\index.php(17): require('C:\\MAMP\\htdocs\\...')
+#3 {main}
+  thrown in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php on line 2
+[05-Jun-2024 15:34:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php:2
+Stack trace:
+#0 C:\MAMP\htdocs\motaphoto\wp-includes\template-loader.php(106): include()
+#1 C:\MAMP\htdocs\motaphoto\wp-blog-header.php(19): require_once('C:\\MAMP\\htdocs\\...')
+#2 C:\MAMP\htdocs\motaphoto\index.php(17): require('C:\\MAMP\\htdocs\\...')
+#3 {main}
+  thrown in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php on line 2
+[05-Jun-2024 15:34:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php:2
+Stack trace:
+#0 C:\MAMP\htdocs\motaphoto\wp-includes\template-loader.php(106): include()
+#1 C:\MAMP\htdocs\motaphoto\wp-blog-header.php(19): require_once('C:\\MAMP\\htdocs\\...')
+#2 C:\MAMP\htdocs\motaphoto\index.php(17): require('C:\\MAMP\\htdocs\\...')
+#3 {main}
+  thrown in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php on line 2
+[05-Jun-2024 15:34:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php:2
+Stack trace:
+#0 C:\MAMP\htdocs\motaphoto\wp-includes\template-loader.php(106): include()
+#1 C:\MAMP\htdocs\motaphoto\wp-blog-header.php(19): require_once('C:\\MAMP\\htdocs\\...')
+#2 C:\MAMP\htdocs\motaphoto\index.php(17): require('C:\\MAMP\\htdocs\\...')
+#3 {main}
+  thrown in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php on line 2
+[05-Jun-2024 15:38:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php:2
+Stack trace:
+#0 C:\MAMP\htdocs\motaphoto\wp-includes\template-loader.php(106): include()
+#1 C:\MAMP\htdocs\motaphoto\wp-blog-header.php(19): require_once('C:\\MAMP\\htdocs\\...')
+#2 C:\MAMP\htdocs\motaphoto\index.php(17): require('C:\\MAMP\\htdocs\\...')
+#3 {main}
+  thrown in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php on line 2
+[05-Jun-2024 15:38:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php:2
+Stack trace:
+#0 C:\MAMP\htdocs\motaphoto\wp-includes\template-loader.php(106): include()
+#1 C:\MAMP\htdocs\motaphoto\wp-blog-header.php(19): require_once('C:\\MAMP\\htdocs\\...')
+#2 C:\MAMP\htdocs\motaphoto\index.php(17): require('C:\\MAMP\\htdocs\\...')
+#3 {main}
+  thrown in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php on line 2
+[05-Jun-2024 15:39:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php:2
+Stack trace:
+#0 C:\MAMP\htdocs\motaphoto\wp-includes\template-loader.php(106): include()
+#1 C:\MAMP\htdocs\motaphoto\wp-blog-header.php(19): require_once('C:\\MAMP\\htdocs\\...')
+#2 C:\MAMP\htdocs\motaphoto\index.php(17): require('C:\\MAMP\\htdocs\\...')
+#3 {main}
+  thrown in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php on line 2
+[05-Jun-2024 15:41:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php:2
+Stack trace:
+#0 C:\MAMP\htdocs\motaphoto\wp-includes\template-loader.php(106): include()
+#1 C:\MAMP\htdocs\motaphoto\wp-blog-header.php(19): require_once('C:\\MAMP\\htdocs\\...')
+#2 C:\MAMP\htdocs\motaphoto\index.php(17): require('C:\\MAMP\\htdocs\\...')
+#3 {main}
+  thrown in C:\MAMP\htdocs\motaphoto\wp-content\themes\motaphoto\index.php on line 2

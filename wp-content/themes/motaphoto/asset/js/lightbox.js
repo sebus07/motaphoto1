@@ -34,9 +34,5 @@ document.addEventListener('DOMContentLoaded', function () {
     let previousBtn = document.getElementById('previousPhoto');
     let nextBtn = document.getElementById('nextPhoto');
 
-
-
-
-
 });
 

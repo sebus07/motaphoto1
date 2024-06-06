@@ -1,4 +1,5 @@
 <?php
+
 function motaphoto1_enqueue_assets()
 {
     // Enqueue styles
@@ -17,7 +18,6 @@ function motaphoto1_enqueue_assets()
     wp_enqueue_script('jquery');
     wp_enqueue_script('mon_script_js', get_stylesheet_directory_uri() . '/asset/js/mon_script.js', array('jquery'), '1.0', true);
     wp_enqueue_script('lightbox_js', get_stylesheet_directory_uri() . '/asset/js/lightbox.js', array('jquery'), '1.0', true);
-    wp_enqueue_script('filtre_chargerPlus.js', get_stylesheet_directory_uri() . '/asset/js/filtre_chargerPlus.js', array('jquery'), '1.0', true);
     wp_enqueue_script('ajax-filter.js', get_stylesheet_directory_uri() . '/asset/js/ajax-filter.js', array('jquery'), '1.0', true);
 
 
@@ -26,6 +26,7 @@ function motaphoto1_enqueue_assets()
 }
 
 add_action('wp_enqueue_scripts', 'motaphoto1_enqueue_assets');
+
 
 
 

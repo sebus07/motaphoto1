@@ -14,7 +14,7 @@ get_header();
 <body <?php body_class(); ?>>
     <div class="hero">
         <a href="#">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/header.webp" alt="Description de l'image">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/asset/img/header.webp" alt="Photo du site motaphoto">
         </a>
     </div>
     <section class="blocCategories">
@@ -24,12 +24,15 @@ get_header();
                 <div class="dropdown-content">
                     <div class="category-option" data-value="all">Catégories</div>
                     <?php
+                    // Récupere tous les termes de la taxonomie catégorie
                     $terms = get_terms(array(
                         'taxonomy' => 'categorie',
                         'hide_empty' => false,
                     ));
+                    // vérifie s'il ya des termes
                     if ($terms && !is_wp_error($terms)) {
                         foreach ($terms as $term) {
+                            //ajoute la classe 'category-option' à chaque option
                             echo '<div class="category-option" data-value="' . $term->slug . '">' . $term->name . '</div>';
                         }
                     }

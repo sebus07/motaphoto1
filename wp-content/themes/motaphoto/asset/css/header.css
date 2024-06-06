@@ -1,22 +1,7 @@
 .header{
     font-family: 'Space Mono', monospace;
+    background-color: red;
 }
-.burger-icon {
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: url('<?php echo get_stylesheet_directory_uri(); ?>/asset/img/Menu.png') no-repeat center;
-    background-size: contain;
-    transition: transform 0.3s ease-in-out;
-}
-
-    .menu-open .burger-icon{
-    transform: rotate(-45deg);  /* Rotation existante */
-    background: url('<?php echo get_stylesheet_directory_uri(); ?>/asset/img/Menux.png') no-repeat center;  /* Image existante */
-    background-size: contain;  /* Taille existante */
-    position: relative;        /* Positionnement relatif pour superposer */
-    z-index: 1000;            /* Valeur plus élevée que le menu pour rester au-dessus */
- }
 
 .container{
     display: flex;
